@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
-const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
@@ -80,10 +79,10 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 const authRouter = require('./routes/auth');
-const genericCrud = require('./routes/genericCRUD');
 app.use('/api/auth', authRouter);
+const plantsRouter = require('./routes/plants');
+app.use('/api/plants', plantsRouter);
 // app.use('/api/news', genericCrud(require('./models/News')));
-app.use('/api/user', genericCrud(require('./models/User')));
 
 
 module.exports = app;

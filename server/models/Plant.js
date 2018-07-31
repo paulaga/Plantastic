@@ -8,11 +8,14 @@ const plantSchema = new Schema({
   rip: Date,
   ligth: String,
   room: String,
-  water: [ last = String, next = String], //Aviso en next y actualizar last-next
+  water: {
+    last: String, 
+    next: String
+    }, //Aviso en next y actualizar last-next 
   fertilize: String, //Aviso
-  trasplantar: String, //Aviso de cuando es buena fecha
+  transplant: String, //Aviso de cuando es buena fecha
   author:{type:Schema.Types.ObjectId, ref:'User'}
-}, {
+  }, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'

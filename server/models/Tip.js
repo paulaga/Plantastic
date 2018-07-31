@@ -6,5 +6,5 @@ const tipsSchema = new Schema({
   plant:{type:Schema.Types.ObjectId, ref:'Plant'}
 });
 
-const Tips = mongoose.model('Tips', tipsSchema);
-module.exports = Tips;
+const Tip = mongoose.model('Tip', tipsSchema);
+module.exports = Tip;

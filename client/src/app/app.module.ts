@@ -9,12 +9,16 @@ import { routes } from './routes';
 import { FormsModule } from '@angular/forms';
 import { SessionService } from '../services/session';
 import { HttpModule } from '@angular/http';
+import { ProfileComponent } from './profile/profile.component';
+import { MyPlantsComponent } from './my-plants/my-plants.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent,
+    MyPlantsComponent
   ],
   imports: [
     BrowserModule,
