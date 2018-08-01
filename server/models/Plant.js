@@ -11,7 +11,7 @@ const plantSchema = new Schema({
   water: {
     last: String, 
     next: String
-    }, //Aviso en next y actualizar last-next 
+  }, //Aviso en next y actualizar last-next 
   fertilize: String, //Aviso
   transplant: String, //Aviso de cuando es buena fecha
   author:{type:Schema.Types.ObjectId, ref:'User'}

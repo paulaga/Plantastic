@@ -1,3 +1,30 @@
 <p>
   my-plants works!
 </p>
+
+<div *ngFor="let plant of plants" class="plant-card">
+  <p>{{plant.name}}</p>
+  <p>{{plant.room}}</p>
+  <a [routerLink]="['plants',plant._id]">ver planta</a>
+</div>
+<button>Añade planta</button>
+
+<form>
+  <h2> Añade tu planta </h2>
+  <label> Foto </label>
+  <input type=“file” capture=“camera” [(ngModel)]="newPlant.image" name="image">
+
+  <label> Nombre </label>
+  <input type="text" [(ngModel)]="newPlant.name" name="name"/>
+
+  <label> Nacimiento </label>
+  <input type="date" [(ngModel)]="newPlant.birth" name="birth"/>
+
+  <label> Luz </label>
+  <input type="text" [(ngModel)]="newPlant.light" name="light"/>
+
+  <label> Habitación </label>
+  <input type="text" [(ngModel)]="newPlant.room" name="room"/>
+
+  <button (click)="submitPlant()"> Añadir </button>
+</form>

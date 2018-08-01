@@ -11,6 +11,8 @@ import { SessionService } from '../services/session';
 import { HttpModule } from '@angular/http';
 import { ProfileComponent } from './profile/profile.component';
 import { MyPlantsComponent } from './my-plants/my-plants.component';
+import { plantsService } from '../services/plants.service';
+import { OnePlantComponent } from './one-plant/one-plant.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +20,16 @@ import { MyPlantsComponent } from './my-plants/my-plants.component';
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    MyPlantsComponent
+    MyPlantsComponent,
+    OnePlantComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
-  providers: [SessionService],
+  providers: [SessionService, plantsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
