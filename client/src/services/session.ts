@@ -7,14 +7,10 @@ import { of } from 'rxjs';
 
 const {BASEURL} = environment;
 
-interface UserObject{
-  username: string,
-}
-
 @Injectable()
 export class SessionService {
 
-  user: UserObject;
+  user;
   options: object = { withCredentials:true };
 
   constructor(private http:Http) {

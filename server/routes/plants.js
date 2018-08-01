@@ -4,16 +4,16 @@ const Plant = require('../models/Plant')
 
 //Create New
 router.post('/', (req, res, next) => {
-  const { image, name, birth, rip, ligth, room, water, fertilize, transplant } = req.body;
-  const newPlant = { image, name, birth, rip, ligth, room, water, fertilize, transplant };
+  const { image, name, birth, rip, ligth, room, water, fertilize, transplant ,author } = req.body;
+  const newPlant = { image, name, birth, rip, ligth, room, water, fertilize, transplant, author };
   Plant.create(newPlant)
     .then(object => res.json(object))
     .catch(e => next(e));
 });
 
 //Read all
-router.get('/', (req, res, next) => {
-  Plant.find()
+router.get('/list/:author', (req, res, next) => {
+  Plant.find({ author: req.params.author })
     .then(object => res.status(200).json(object))
     .catch(e => next(e))
 });

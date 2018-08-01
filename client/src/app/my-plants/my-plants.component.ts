@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
 import { Router } from '../../../node_modules/@angular/router';
+import { SessionService } from '../../services/session';
 
 @Component({
   selector: 'app-my-plants',
@@ -22,11 +23,12 @@ export class MyPlantsComponent {
       next: ''
     },
     fertilize: '',
-    transplant: ''
+    transplant: '',
+    author: this.session.user._id
   };
 
-  constructor(private plantsService: plantsService, private router: Router) {
-    this.plantsService.getPlants()
+  constructor(private session: SessionService, private plantsService: plantsService, private router: Router) {
+    this.plantsService.getPlants(this.session.user._id)
       .subscribe(data => {
         this.plants = data;
         this.refreshPlants();
@@ -39,7 +41,7 @@ export class MyPlantsComponent {
   }
 
   refreshPlants() {
-    this.plantsService.getPlants()
+    this.plantsService.getPlants(this.session.user._id)
       .subscribe(data => (this.plants = data));
   }
 }

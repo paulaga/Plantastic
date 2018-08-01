@@ -9,8 +9,8 @@ const { BASEURL } = environment;
 export class plantsService {
   constructor(private http: Http) {}
 
-  getPlants(){
-    return this.http.get(`${BASEURL}/api/plants/`)
+  getPlants(author){
+    return this.http.get(`${BASEURL}/api/plants/list/${author}`)
     .pipe(map(res => res.json()));
   }
 
