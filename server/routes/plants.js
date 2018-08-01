@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const Plant = require('../models/Plant')
+const Plant = require('../models/Plant');
+const moment = require("moment");
+moment.locale("es");
+moment().format('DD/MM/AA');
 
 //Create New
 router.post('/', (req, res, next) => {
-  const { image, name, birth, rip, ligth, room, water, fertilize, transplant ,author } = req.body;
-  const newPlant = { image, name, birth, rip, ligth, room, water, fertilize, transplant, author };
+  const { image, name, birth, rip, light, room, lastWater, nextWater, fertilize, transplant ,author } = req.body;
+  // const lastWater = moment(lastWater).format('LLL');
+  const newPlant = { image, name, birth, rip, light, room, lastWater, nextWater, fertilize, transplant, author };
   Plant.create(newPlant)
     .then(object => res.json(object))
     .catch(e => next(e));
@@ -20,7 +24,7 @@ router.get('/list/:author', (req, res, next) => {
 
 //Read one
 router.get('/:id', (req, res, next) => {
-  Plant.findOne()
+  Plant.findById(req.params.id)
     .then(object => res.status(200).json(object))
     .catch(e => next(e))
 });

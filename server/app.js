@@ -82,7 +82,7 @@ const authRouter = require('./routes/auth');
 app.use('/api/auth', authRouter);
 const plantsRouter = require('./routes/plants');
 app.use('/api/plants', plantsRouter);
-// app.use('/api/news', genericCrud(require('./models/News')));
-
+const tipsRouter = require('./routes/tips');
+app.use('/api/tips', tipsRouter);
 
 module.exports = app;

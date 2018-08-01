@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MyPlantsComponent } from './my-plants/my-plants.component';
 import { plantsService } from '../services/plants.service';
 import { OnePlantComponent } from './one-plant/one-plant.component';
+import { TipsComponent } from './tips/tips.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { OnePlantComponent } from './one-plant/one-plant.component';
     SignupComponent,
     ProfileComponent,
     MyPlantsComponent,
-    OnePlantComponent
+    OnePlantComponent,
+    TipsComponent
   ],
   imports: [
     BrowserModule,

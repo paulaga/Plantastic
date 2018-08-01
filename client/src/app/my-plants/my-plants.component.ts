@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
 import { Router } from '../../../node_modules/@angular/router';
 import { SessionService } from '../../services/session';
+// const moment = require("moment");
+// moment.locale("es");
+// moment().format('DD/MM/AA');
 
 @Component({
   selector: 'app-my-plants',
@@ -18,10 +21,8 @@ export class MyPlantsComponent {
     rip: '',
     ligth: '',
     room: '',
-    water: {
-      last: '', 
-      next: ''
-    },
+    // lastWater: moment().format('DD/MM/AAAA'),
+    nextWater: '',
     fertilize: '',
     transplant: '',
     author: this.session.user._id

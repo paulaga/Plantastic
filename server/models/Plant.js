@@ -3,15 +3,13 @@ const Schema   = mongoose.Schema;
 
 const plantSchema = new Schema({
   image: String,
-  name: String,
-  birth: Date,
-  rip: Date,
+  name: {type: String, required: true},
+  birth: String,
+  rip: String,
   ligth: String,
   room: String,
-  water: {
-    last: String, 
-    next: String
-  }, //Aviso en next y actualizar last-next 
+  lastWater: String, 
+  nextWater: String, //Aviso en next y actualizar last-next 
   fertilize: String, //Aviso
   transplant: String, //Aviso de cuando es buena fecha
   author:{type:Schema.Types.ObjectId, ref:'User'}

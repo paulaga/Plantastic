@@ -26,5 +26,8 @@
   <label> Habitación </label>
   <input type="text" [(ngModel)]="newPlant.room" name="room"/>
 
+  <label> Último riego </label>
+  <input type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
+
   <button (click)="submitPlant()"> Añadir </button>
 </form>

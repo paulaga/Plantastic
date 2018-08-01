@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
-import { Router, ActivatedRoute } from '../../../node_modules/@angular/router';
+import { ActivatedRoute } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-one-plant',

@@ -13,9 +13,21 @@
   <div>
     <h2>Fechas importantes</h2>
     <p>Riego:</p>
-    <p>Último riego: {{plant.water.last}}</p>
-    <p>Próximo riego: {{plant.water.next}}</p>
+    <p>Último riego: {{plant.lastWater}}</p>
+    <p>Próximo riego: {{plant.nextWater}}</p>
     <p>Abonar: {{plant.fertilize}}</p>
     <p>Trasplantar: {{plant.transplant}}</p>
   </div>
 </div>
+
+<h2>Tips</h2>
+<div *ngIf="tip">
+  <ul *ngFor="let tip of tips">
+    <li>{{tip.text}}</li>
+  </ul>
+</div>
+<form>
+  <input type="text" [(ngModel)]="newTip.text" name="text" placeholder="Algo que añadir...">
+  <button (click)="submitTip()">Añadir</button>
+</form>
+

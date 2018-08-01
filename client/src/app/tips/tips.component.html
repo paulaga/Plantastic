@@ -1,0 +1,10 @@
+<h2>Tips</h2>
+<div *ngIf="Tips">
+  <ul *ngFor="let tip of tips">
+    <li>{{tip.text}}</li>
+  </ul>
+</div>
+<form>
+  <input type="text" placeholder="Algo que añadir...">
+  <button (click)="submitTip()"></button>
+</form>
