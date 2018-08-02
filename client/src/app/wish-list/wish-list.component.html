@@ -6,7 +6,7 @@
 <div *ngIf="wish">
   <ul *ngFor="let w of wish">
     <li>{{w.text}}</li>
-    <button (click)="delete()">Eliminar</button>
+    <button (click)="deleteWish(w._id)">Eliminar</button>
   </ul>
 </div>
 

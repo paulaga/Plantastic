@@ -32,8 +32,8 @@ export class WishListComponent implements OnInit {
   .subscribe(() => this.refreshWishes());
   }
   
-  delete(){
-    this.wishService.removeWish(this.wish._id)
+  deleteWish(id){
+    this.wishService.removeWish(id)
     .subscribe(() => this.refreshWishes());
   }
   

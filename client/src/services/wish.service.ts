@@ -22,7 +22,7 @@ export class wishService {
   }
   
   removeWish(id){
-    return this.http.delete(`${BASEURL}/api/wishlist/`, id)
+    return this.http.delete(`${BASEURL}/api/wishlist/${id}`)
     .pipe(map(res => res.json()));
   }
 

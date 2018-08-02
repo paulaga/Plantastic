@@ -20,9 +20,9 @@ router.get('/:author', (req, res, next) => {
 
 //Delete
 router.delete('/:id', (req,res,next) => {
-  //const wish = req.params.id;
-  Wish.findByIdAndDelete({id: req.params._id})
-    .then(object => res.status(200).json(object))
+  const wish = req.params.id;
+  Wish.findByIdAndRemove(wish)
+    .then(() => res.status(200).json({message: `Eliminado ${req.params.id}`}))
     .catch(e => next(e));
 });
 
