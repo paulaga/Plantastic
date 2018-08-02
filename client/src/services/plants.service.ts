@@ -21,7 +21,6 @@ export class plantsService {
     return this.http.get(`${BASEURL}/api/plants/${id}`)
     .pipe(map((res:Response) => {
       this.plant = res.json();
-      console.log(this.plant)
       return this.plant;
     }));
   }
@@ -43,6 +42,6 @@ export class plantsService {
 
   getTips(plantId){
     return this.http.get(`${BASEURL}/api/tips/${plantId}`)
-    .pipe(map( res => res.json()));
+    .pipe(map(res => res.json()));
   }
 }

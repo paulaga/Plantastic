@@ -9,12 +9,14 @@ import { ActivatedRoute } from '../../../node_modules/@angular/router';
 })
 export class OnePlantComponent implements OnInit {
   plant;
+  plantId;
 
   constructor(
     private plantsService : plantsService, 
     private route: ActivatedRoute
   ) { 
     this.route.params.subscribe(params => {
+      this.plantId = params.id;
       this.plantsService.getOnePlant(params.id)
       .subscribe( plant => (this.plant = plant));
     });

@@ -13,7 +13,7 @@ router.post('/', (req, res, next) => {
 
 //Read all
 router.get('/:plant', (req, res, next) => {
-  Tip.find({ plant: req.params.plant })
+  Tip.find({ plantId: req.params.plant })
     .then(object => res.status(200).json(object))
     .catch(e => next(e))
 });

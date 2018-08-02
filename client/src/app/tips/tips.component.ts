@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
 import { Router } from '../../../node_modules/@angular/router';
 
@@ -7,17 +7,23 @@ import { Router } from '../../../node_modules/@angular/router';
   templateUrl: './tips.component.html',
   styleUrls: ['./tips.component.css']
 })
-export class TipsComponent {
-  tip;
+export class TipsComponent implements OnInit{
+  @Input() plant;
+  tips;
   newTip = {
     text: '',
-    plantId: this.plantsService.plant._id
+    plantId:''
   };
 
   constructor(private plantsService: plantsService, private router: Router) { 
-    this.plantsService.getTips(this.plantsService.plant._id)
+    
+  }
+
+  ngOnInit() {
+    this.plantsService.getTips(this.plant)
     .subscribe(data => {
-      this.tip = data;
+      this.newTip.plantId = this.plant;
+      this.tips = data;
       this.refreshTips();
     })
   }
@@ -25,11 +31,12 @@ export class TipsComponent {
   submitTip(){
     this.plantsService.createTips(this.newTip)
       .subscribe(() => this.refreshTips());
+    this.newTip.text = '';
   }
 
   refreshTips() {
-    this.plantsService.getTips(this.plantsService.plant._id)
-      .subscribe(data => (this.tip = data));
+    this.plantsService.getTips(this.plant)
+      .subscribe(data => (this.tips = data));
   }
 
 }

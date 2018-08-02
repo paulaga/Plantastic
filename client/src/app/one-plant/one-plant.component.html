@@ -3,9 +3,9 @@
 </p>
 
 <div>
-  <img [src]="plant.image" alt="">
+  <!-- <img [src]="plant.image" alt=""> -->
 </div>
-<div>
+<div *ngIf="plant">
   <p>Nombre: {{plant.name}}</p>
   <p>Nacimiento: {{plant.birth}}</p>
   <p>Luz: {{plant.light}}</p>
@@ -20,14 +20,4 @@
   </div>
 </div>
 
-<h2>Tips</h2>
-<div *ngIf="tip">
-  <ul *ngFor="let tip of tips">
-    <li>{{tip.text}}</li>
-  </ul>
-</div>
-<form>
-  <input type="text" [(ngModel)]="newTip.text" name="text" placeholder="Algo que añadir...">
-  <button (click)="submitTip()">Añadir</button>
-</form>
-
+<app-tips [plant]="plantId"></app-tips>
