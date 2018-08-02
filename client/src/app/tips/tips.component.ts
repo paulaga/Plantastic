@@ -15,9 +15,7 @@ export class TipsComponent implements OnInit{
     plantId:''
   };
 
-  constructor(private plantsService: plantsService, private router: Router) { 
-    
-  }
+  constructor(private plantsService: plantsService, private router: Router) {}
 
   ngOnInit() {
     this.plantsService.getTips(this.plant)

@@ -84,5 +84,7 @@ const plantsRouter = require('./routes/plants');
 app.use('/api/plants', plantsRouter);
 const tipsRouter = require('./routes/tips');
 app.use('/api/tips', tipsRouter);
+const wishRouter = require('./routes/wishlist');
+app.use('/api/wishlist', wishRouter);
 
 module.exports = app;

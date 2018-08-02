@@ -14,6 +14,8 @@ import { MyPlantsComponent } from './my-plants/my-plants.component';
 import { plantsService } from '../services/plants.service';
 import { OnePlantComponent } from './one-plant/one-plant.component';
 import { TipsComponent } from './tips/tips.component';
+import { WishListComponent } from './wish-list/wish-list.component';
+import { wishService } from '../services/wish.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { TipsComponent } from './tips/tips.component';
     ProfileComponent,
     MyPlantsComponent,
     OnePlantComponent,
-    TipsComponent
+    TipsComponent,
+    WishListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { TipsComponent } from './tips/tips.component';
     FormsModule,
     HttpModule,
   ],
-  providers: [SessionService, plantsService],
+  providers: [SessionService, plantsService, wishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

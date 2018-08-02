@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { OnePlantComponent } from './one-plant/one-plant.component';
 import { MyPlantsComponent } from './my-plants/my-plants.component';
+import { WishListComponent } from './wish-list/wish-list.component';
 
 export const routes: Routes = [
   { path:'signup', component: SignupComponent },
@@ -11,7 +12,8 @@ export const routes: Routes = [
   { path:'profile', component: ProfileComponent,
     children: [
       { path: '', component: MyPlantsComponent},
-      { path: 'plants/:id', component: OnePlantComponent}
+      { path: 'plants/:id', component: OnePlantComponent},
+      { path: 'wishlist', component: WishListComponent}
     ]
   }
 ];

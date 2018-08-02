@@ -1,0 +1,14 @@
+<p>
+  wish-list works!
+</p>
+
+<h2>Wishlist!!!!</h2>
+<div *ngIf="wish">
+  <ul *ngFor="let w of wish">
+    <li>{{w.text}}</li>
+    <button (click)="delete()">Eliminar</button>
+  </ul>
+</div>
+
+<input type="text" [(ngModel)]="newWish.text" name="text" placeholder="Tu deseo"/>
+<button (click)="submitWish()">Añadir</button>
