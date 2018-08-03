@@ -4,8 +4,8 @@ const Plant = require('../models/Plant');
 
 //Create New
 router.post('/', (req, res, next) => {
-  const { image, name, birth, rip, light, room, lastWater, nextWater, fertilize, transplant, author } = req.body;
-  const newPlant = { image, name, birth, rip, light, room, lastWater, nextWater, fertilize, transplant, author };
+  const { image, name, birth, light, room, waterTimes, lastWater, nextWater, fertilize, transplant, author } = req.body;
+  const newPlant = { image, name, birth, light, room, waterTimes, lastWater, nextWater, fertilize, transplant, author };
   Plant.create(newPlant)
     .then(object => res.json(object))
     .catch(e => next(e));
