@@ -1,14 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Plant = require('../models/Plant');
-const moment = require("moment");
-moment.locale("es");
-moment().format('DD/MM/AA');
 
 //Create New
 router.post('/', (req, res, next) => {
-  const { image, name, birth, rip, light, room, lastWater, nextWater, fertilize, transplant ,author } = req.body;
-  // const lastWater = moment(lastWater).format('LLL');
+  const { image, name, birth, rip, light, room, lastWater, nextWater, fertilize, transplant, author } = req.body;
   const newPlant = { image, name, birth, rip, light, room, lastWater, nextWater, fertilize, transplant, author };
   Plant.create(newPlant)
     .then(object => res.json(object))

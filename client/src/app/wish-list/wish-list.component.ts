@@ -30,6 +30,7 @@ export class WishListComponent implements OnInit {
   submitWish(){
   this.wishService.newWish(this.newWish)
   .subscribe(() => this.refreshWishes());
+  this.newWish.text = '';
   }
   
   deleteWish(id){

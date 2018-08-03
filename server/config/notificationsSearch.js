@@ -6,8 +6,24 @@ function lookForNotifications(){
   User.find()    
   .then(users => 
     users.forEach(user => {
-      Plant.findById(user._id)
-      console.log(user._id)
+      Plant.find()
+      .then(plants => {
+        plants.forEach(plant => {
+          console.log(plant.author)
+          console.log(user._id)
+          //if{plant}
+          
+          
+          if(plant.author.toString() == user._id.toString()){
+            console.log("yes")
+          } else {
+            console.log("no")
+          }
+        })
+      })
+      //if (Plant)
+      //Plant.findById(user._id)
+      //console.log(Plant.findById(user._id))
     }))
   .catch(e => next(e))
 }
