@@ -10,6 +10,8 @@ const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const cors = require('cors');
+const CronJob = require('cron').CronJob;
+const lookForNotifications = require('./config/notificationsSearch');
 
 const { DBURL } = process.env;
 mongoose.Promise = Promise;
@@ -50,7 +52,6 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 // Express View engine setup
-
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -68,6 +69,11 @@ app.use(session({
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 require('./passport')(app);
+
+// Cron counter
+new CronJob('* * * * * *', function() {
+  lookForNotifications();
+}, null, true, 'Europe/Madrid');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
