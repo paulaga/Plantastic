@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '../../../node_modules/@angular/router';
 import * as moment from 'moment';
 let es = moment.locale("es");
 
@@ -14,7 +14,8 @@ export class OnePlantComponent implements OnInit {
   plantId;
 
   constructor(
-    private plantsService : plantsService, 
+    private plantsService : plantsService,
+    private router: Router, 
     private route: ActivatedRoute
   ) { 
     this.route.params.subscribe(params => {
@@ -25,13 +26,17 @@ export class OnePlantComponent implements OnInit {
         this.plant['birth'] = moment(plant['birth']).format('LL');
         this.plant['lastWater'] = moment(plant['lastWater'])
         this.plant['nextWater'] = moment(plant['lastWater']).add(plant['waterTimes'], 'days').calendar();
-        console.log(this.plant.nextWater)
         this.plant['lastWater'] = moment(plant['lastWater']).format('LL'); // Sobrescribe con formato
       });
     });
 }
 
   ngOnInit() {
+  }
+
+  deletePlant(id){
+    this.plantsService.removePlant(id)
+    .subscribe(() => this.router.navigate(['/profile']));
   }
 
 }

@@ -35,6 +35,7 @@ export class plantsService {
     .pipe(map(res => res.json()));
   }
 
+  // Plant Tips
   createTips(tip){
     return this.http.post(`${BASEURL}/api/tips/`, tip)
     .pipe(map(res => res.json()));

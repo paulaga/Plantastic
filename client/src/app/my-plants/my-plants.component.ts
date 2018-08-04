@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
 import { Router } from '../../../node_modules/@angular/router';
 import { SessionService } from '../../services/session';
-import { FileUploader } from '../../../node_modules/ng2-file-upload';
+import { FileUploader, FileItem } from '../../../node_modules/ng2-file-upload';
 
 @Component({
   selector: 'app-my-plants',
@@ -68,8 +68,7 @@ export class MyPlantsComponent implements OnInit{
     console.log(plant)
     this.uploader.onCompleteItem = () => {
       console.log(plant)
-      this.refreshPlants();
-      //this.router.navigate(['/profile']);
+      this.router.navigate(['/profile']);
     }
       //.subscribe(() => this.refreshPlants());
   }

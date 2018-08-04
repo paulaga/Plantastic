@@ -45,7 +45,7 @@ router.put('/:id', (req,res,next) => {
 //Delete
 router.delete('/:id', (req,res,next) => {
   const plantId = req.params.id;
-  Plant.findByIdAndDelete(plantId)
+  Plant.findByIdAndRemove(plantId)
     .then(object => res.status(200).json(object))
     .catch(e => next(e));
 });
