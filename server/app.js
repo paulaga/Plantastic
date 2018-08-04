@@ -71,7 +71,7 @@ app.use(session({
 require('./passport')(app);
 
 // Cron counter
-new CronJob('* * * * * *', function() {
+new CronJob('* * * * *', function() {
   lookForNotifications();
 }, null, true, 'Europe/Madrid');
 

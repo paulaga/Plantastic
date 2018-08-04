@@ -1,6 +1,7 @@
 //const mongoose = require('mongoose');
 const User = require('../models/User');
 const Plant = require('../models/Plant')
+const moment = require ('moment');
 
 function lookForNotifications(){
   User.find()    
@@ -9,9 +10,16 @@ function lookForNotifications(){
       Plant.find()
       .then(plants => {
         plants.forEach(plant => {
+          console.log("----------")
           console.log(plant.author)
-          console.log(user._id)
-          //if{plant}
+          console.log(plant.lastWater)
+          console.log(moment(plant.lastWater).add(plant.waterTimes, 'days').format('LL'))
+          plant.nextWater = moment(plant.lastWater).add(plant.waterTimes, 'days').format('LL');
+          console.log(plant.nextWater = moment(plant.lastWater).add(plant.waterTimes, 'days').format('LL'))
+          console.log(moment().format('LL'))
+          if((plant.nextWater = moment(plant.lastWater).add(plant.waterTimes, 'days').format('LL')) == moment().format('LL')) {
+            console.log(`Hoy tienes que regar a ${plant.name}`)
+          }
           
           
           if(plant.author.toString() == user._id.toString()){
