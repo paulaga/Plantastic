@@ -16,6 +16,7 @@ import { OnePlantComponent } from './one-plant/one-plant.component';
 import { TipsComponent } from './tips/tips.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { wishService } from '../services/wish.service';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { wishService } from '../services/wish.service';
     MyPlantsComponent,
     OnePlantComponent,
     TipsComponent,
-    WishListComponent
+    WishListComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

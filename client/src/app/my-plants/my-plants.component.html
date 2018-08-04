@@ -3,16 +3,17 @@
 </p>
 
 <div *ngFor="let plant of plants" class="plant-card">
+  <img [src]="plant.image" alt="" width=100>
   <p>{{plant.name}}</p>
   <p>{{plant.room}}</p>
   <a [routerLink]="['plants',plant._id]">ver planta</a>
 </div>
 <button>Añade planta</button>
 
-<form>
-  <h2> Añade tu planta </h2>
+<h2> Añade tu planta </h2>
+  <form>
   <label> Foto </label>
-  <input type=“file” capture=“camera” [(ngModel)]="newPlant.image" name="image">
+  <input type="file" name="file" ng2FileSelect [uploader]="uploader">
 
   <label> Nombre </label>
   <input type="text" [(ngModel)]="newPlant.name" name="name"/>
@@ -20,17 +21,17 @@
   <label> Nacimiento </label>
   <input type="date" [(ngModel)]="newPlant.birth" name="birth"/>
 
-  <label> Luz </label>
+  <label> Cuánta luz necesita?</label>
   <input type="text" [(ngModel)]="newPlant.light" name="light"/>
 
-  <label> Habitación </label>
+  <label> En qué habitación vive?</label>
   <input type="text" [(ngModel)]="newPlant.room" name="room"/>
 
-  <label> Riego (en días)</label>
+  <label> Cada cuántos días se debe regar?</label>
   <input type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
 
-  <label> Último riego </label>
+  <label> Cuándo fue el último día que regaste?</label>
   <input type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
 
-  <button (click)="submitPlant()"> Añadir </button>
+  <button type="submit" (click)="addPlant(newPlant)"> Tienes una nueva habitante </button>
 </form>

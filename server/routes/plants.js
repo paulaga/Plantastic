@@ -1,13 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const Plant = require('../models/Plant');
+const multer = require('multer')
+const uploadCloud = require('../config/cloudinary')
 
 //Create New
-router.post('/', (req, res, next) => {
+router.post('/', uploadCloud.single('file'), (req, res, next) => {
   const { image, name, birth, light, room, waterTimes, lastWater, nextWater, fertilize, transplant, author } = req.body;
   const newPlant = { image, name, birth, light, room, waterTimes, lastWater, nextWater, fertilize, transplant, author };
+  if(req.file.url) { 
+    newPlant.image = req.file.url
+  }
+  console.log(newPlant)
+  console.log(newPlant.image)
   Plant.create(newPlant)
-    .then(object => res.json(object))
+    console.log("Its upload")
+    .then(object => res.status(200).json(object))
     .catch(e => next(e));
 });
 
