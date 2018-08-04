@@ -17,6 +17,9 @@ import { TipsComponent } from './tips/tips.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { wishService } from '../services/wish.service';
 import { FileSelectDirective } from 'ng2-file-upload';
+import { MatInputModule } from '@angular/material/input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,16 @@ import { FileSelectDirective } from 'ng2-file-upload';
     OnePlantComponent,
     TipsComponent,
     WishListComponent,
-    FileSelectDirective
+    FileSelectDirective,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
     HttpModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule
   ],
   providers: [SessionService, plantsService, wishService],
   bootstrap: [AppComponent]

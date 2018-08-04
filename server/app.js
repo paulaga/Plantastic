@@ -71,9 +71,9 @@ app.use(session({
 require('./passport')(app);
 
 // Cron counter
-new CronJob('* * * * *', function() {
-  lookForNotifications();
-}, null, true, 'Europe/Madrid');
+//new CronJob('* * * * *', function() {
+//  lookForNotifications();
+//}, null, true, 'Europe/Madrid');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

@@ -1,11 +1,38 @@
-<form>
-  <h2> Login </h2>
-  <label> Username </label>
-  <input type="text" [(ngModel)]="username" name="username"/>
+<h2> Login </h2>
+<form class="login100-form validate-form">
+    <!-- <label> Username </label> -->
+  <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+    <input class="input100" type="text" [(ngModel)]="username" name="username"/>
+    <span class="focus-input100" data-placeholder="Username"></span>
+  </div>
+  <div class="wrap-input100 validate-input" data-validate="Password">
+    <span class="btn-show-pass">
+      <i class="zmdi zmdi-eye"></i>
+    </span>
+    <input class="input100" type="password" [(ngModel)]="password" name="password">
+    <span class="focus-input100" data-placeholder="Password"></span>
+  </div>
+  <div class="container-login100-form-btn">
+    <div class="wrap-login100-form-btn">
+      <div class="login100-form-bgbtn"></div>
+      <button (click)="login(username,password)" class="login100-form-btn">Login</button>
+    </div>
+  </div>
+</form>
+<p class="error"> {{ error }} </p>
+
+<!-- <h2> Login </h2>
+<form class="example-form">
+<label> Username </label>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Username" type="text" [(ngModel)]="username" name="username"/>
+  </mat-form-field>
   <br>
-  <label> Password </label>
-  <input type="password" [(ngModel)]="password" name="password"/>
+  <!-- <label> Password </label>
+  <mat-form-field class="example-full-width">
+    <input matInput  placeholder="Contraseña" type="password" [(ngModel)]="password" name="password"/>
+  </mat-form-field>
 
   <button (click)="login(username,password)"> login </button>
 </form>
-<p class="error"> {{ error }} </p>
+<p class="error"> {{ error }} </p>  -->
