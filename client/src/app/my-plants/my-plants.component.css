@@ -1,3 +1,32 @@
+/* My plants Cards */
+.cards-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 .plant-card{
-  border: 1px solid aqua;
+  width: 30%;
+  margin: 10px 1.6%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.img-card-container img{
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+}
+
+/* Add btn */
+.plus-btn{
+  font-size: 2em;
+  width: 50px;
+  height: 50px;
+  background: #2ECC71;
+  color: #FFF;
+  border-radius: 50%;
+  position: relative;
+  bottom: 17px;
+  margin-left: -25px;
+  left: 50%;
 }

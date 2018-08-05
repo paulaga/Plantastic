@@ -1,14 +1,29 @@
-<p>
-  my-plants works!
-</p>
-
-<div *ngFor="let plant of plants" class="plant-card">
-  <img [src]="plant.image" alt="" width=100>
-  <p>{{plant.name}}</p>
-  <p>{{plant.room}}</p>
-  <a [routerLink]="['plants',plant._id]">ver planta</a>
+<!-- <div *ngIf="!plants">
+  <p>  Empieza a cuidar tus plantas
+    </p>
+</div> -->
+<div *ngIf="plants">
+  <div class="container cards-container">
+    <div *ngFor="let plant of plants" class="plant-card">
+      <div class="img-card-container">
+        <img [src]="plant.image" alt="{{plant.name}}">
+      </div>
+      <h3>{{plant.name}}</h3>
+      <p>{{plant.room}}</p>
+      <a [routerLink]="['plants',plant._id]">ver planta</a>
+    </div>
+    <div class="plant-card">
+      <div class="img-card-container">
+        <img src="../../assets/images/default.png" alt="plantita">
+      </div>
+      <!-- <h3>{{plant.name}}</h3>
+      <p>{{plant.room}}</p>
+      <a [routerLink]="['plants',plant._id]">ver planta</a> -->
+      <button class="plus-btn">+</button>
+      <button>Añade planta</button>
+    </div>
+  </div>
 </div>
-<button>Añade planta</button>
 
 <h2> Añade tu planta </h2>
   <form>

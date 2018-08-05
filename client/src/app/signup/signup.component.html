@@ -1,4 +1,27 @@
-<form>
+<form class="login100-form validate-form">
+  <h2 class="login100-form-title"> Sign up </h2>
+  <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+    <input class="input100" type="text" [(ngModel)]="username" name="username"/>
+    <span class="focus-input100" data-placeholder="Username"></span>
+  </div>
+  <div class="wrap-input100 validate-input" data-validate="Password">
+    <span class="btn-show-pass">
+      <i class="zmdi zmdi-eye"></i>
+    </span>
+    <input class="input100" type="password" [(ngModel)]="password" name="password">
+    <span class="focus-input100" data-placeholder="Password"></span>
+  </div>
+  <div class="container-login100-form-btn">
+      <div class="wrap-login100-form-btn">
+        <div class="login100-form-bgbtn"></div>
+        <button (click)="signup(username,password)" class="login100-form-btn">Signup</button>
+      </div>
+    </div>
+  </form>
+
+
+
+<!-- <form>
     <h2> Signup </h2>
     <label> Username </label>
     <input type="text" [(ngModel)]="username" name="username"/>
@@ -8,4 +31,4 @@
 
     <button (click)="signup(username, password)"> SIGNUP </button>
   </form>
-  <p class="error"> {{ error }} </p>
+  <p class="error"> {{ error }} </p> -->
