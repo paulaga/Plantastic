@@ -3,12 +3,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  padding: 100px 0;
 }
 .plant-card{
   width: 30%;
   margin: 10px 1.6%;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  background: #FFF;
+  /* border: 1px solid #ccc; */
+  -webkit-box-shadow: 5px 5px 34px -7px rgba(40,55,71,1);
+  -moz-box-shadow: 5px 5px 34px -7px rgba(40,55,71,1);
+  box-shadow: 5px 5px 34px -7px rgba(40,55,71,1);
 }
 .img-card-container img{
   width: 100%;
@@ -16,8 +21,26 @@
   object-fit: cover;
   border-radius: 6px 6px 0 0;
 }
+.info-card-container{
+  padding: 20px;
+}
+.info-card-container h4{
+  font-weight: 900;
+  text-transform: capitalize;
+}
 
-/* Add btn */
+.fa-tint{
+  margin: 10px 5px 0 0;
+  color: #2ECC71;
+}
+
+/* Add new plant card */
+.new-plant{
+  opacity: .8;
+}
+.new-plant img{
+  opacity: .5;
+}
 .plus-btn{
   font-size: 2em;
   width: 50px;
@@ -29,4 +52,20 @@
   bottom: 17px;
   margin-left: -25px;
   left: 50%;
+}
+.plus-btn:hover, .plus-btn:active{
+  background: #138D75;
+}
+  /* border: 8px solid #FFF;
+  width: 66px;
+  height: 66px;
+  margin-left: -33px;
+  bottom: 29px; */
+
+
+.plus-txt{
+  font-size: .8em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
 }

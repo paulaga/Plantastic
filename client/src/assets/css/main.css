@@ -10,6 +10,10 @@
   font-weight: normal;
   font-style: normal;
 } */
+.hidden{
+  display: none;
+}
+
 .zmdi {
   display: inline-block;
   font: normal normal normal 'Material-Design-Iconic-Font';
@@ -18,7 +22,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 /*---------------------------------------------*/
 a {
@@ -197,7 +200,7 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #adadad;
+  border-bottom: 1px solid #adadad;
   margin-bottom: 37px;
 }
 
