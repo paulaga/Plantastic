@@ -1,0 +1,64 @@
+.hero{
+  width: 100%;
+  height: 30vh;
+}
+.hero img{
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* First card */
+.circle-plant-img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 8px solid #2ECC71;
+  position: relative;
+  left: 88%;
+  bottom: 142px;
+
+}
+.plant-info-card{
+  width: 60vw;
+  height: 145px;
+  margin: 0 auto 10px auto;
+  padding: 30px;
+  background: #FFF;
+  position: relative;
+  top: -50px;
+}
+.one-plant-info{
+  font-weight: 800;
+  margin-right: 5px;
+  color: #2ECC71;
+}
+
+/* Important info */
+.important-info{
+  background: #2ECC71;
+  color: #FFF;
+  height: inherit;
+  padding-bottom: 45px;
+}
+.important-info h2{
+  font-weight: 900;
+  text-align: right;
+  margin: 10px 0 26px 0;
+}
+.white{
+  color: #FFF;
+}
+.important-info p{
+  border-bottom: 1px dotted #FFF;
+  padding: 15px 0 3px 0;
+}
+
+.modal{
+  -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+}

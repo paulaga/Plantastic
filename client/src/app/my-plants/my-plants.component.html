@@ -1,6 +1,6 @@
 <!-- <div *ngIf="!plants">
   <p>  Empieza a cuidar tus plantas
-    </p>
+  </p>
 </div> -->
 <div *ngIf="plants">
   <div class="container cards-container">
@@ -18,17 +18,54 @@
       <div class="img-card-container">
         <img src="../../assets/images/default.png" alt="plantita">
       </div>
-      <button class="plus-btn">+</button>
+      <button class="plus-btn" button type="button" data-toggle="modal" data-target="#exampleModal">+</button>
       <p class="plus-txt">Añade una nueva planta</p>
     </div>
   </div>
 </div>
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form class="login100-form modal-content">
+      <div class="wrap-input100">
+        <input class="input100" type="text" [(ngModel)]="newPlant.name" name="name"/>
+        <span class="focus-input100" data-placeholder="Nombre"></span>
+      </div>
+      <div class="wrap-input100">
+        <input class="input100" type="text" [(ngModel)]="newPlant.light" name="light"/>
+        <span class="focus-input100" data-placeholder="Cuánta luz necesita?"></span>
+      </div>
+      <div class="wrap-input100">
+        <input class="input100" type="text" [(ngModel)]="newPlant.room" name="room"/>
+        <span class="focus-input100" data-placeholder="En qué habitación vive?"></span>
+      </div>
+      <div class="wrap-input100">
+        <input class="input100" type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
+        <span class="focus-input100" data-placeholder="Cada cuántos días se debe regar?"></span>
+      </div>
+      <div class="wrap-input100">
+        <input class="input100" type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
+        <span class="focus-input100" data-placeholder="Cuándo fue el último día que regaste?"></span>
+      </div>
+      <div class="wrap-input-file">
+        <input class="input100" type="file" name="file" ng2FileSelect [uploader]="uploader"/>
+      </div>  
+      <div class="container-login100-form-btn">
+        <div class="wrap-login100-form-btn">
+          <div class="login100-form-bgbtn"></div>
+          <button type="submit" (click)="addPlant(newPlant)" class="login100-form-btn" data-dismiss="modal"> Tienes una nueva habitante </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
 
 
 <!-----------  Nueva planta Form -->
-<div id="newPlantForm">
+<!-- <div id="newPlantForm">
   <form class="login100-form">
-    <!-- <h2 class="login100-form-title"> Añade tu nueva planta </h2> -->
     <div class="wrap-input100">
       <input class="input100" type="text" [(ngModel)]="newPlant.name" name="name"/>
       <span class="focus-input100" data-placeholder="Nombre"></span>
@@ -51,7 +88,6 @@
     </div>
     <div class="wrap-input-file">
       <input class="input100" type="file" name="file" ng2FileSelect [uploader]="uploader"/>
-      <!-- <span class="focus-input100" data-placeholder="Username"></span> -->
     </div>
     
     <div class="container-login100-form-btn">
@@ -61,7 +97,12 @@
       </div>
     </div>
   </form>
-</div>
+</div> -->
+
+
+
+
+
 
 
 
