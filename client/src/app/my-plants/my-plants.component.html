@@ -2,6 +2,9 @@
   <p>  Empieza a cuidar tus plantas
   </p>
 </div> -->
+<div>
+  <p>{{notif.message}}</p>
+</div>
 <div *ngIf="plants">
   <div class="container cards-container">
     <div *ngFor="let plant of plants" class="plant-card">

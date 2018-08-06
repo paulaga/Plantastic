@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
-// const moment = require("moment");
-// moment.locale("es");
-// moment().format('LL');
 
 const plantSchema = new Schema({
   image: String,

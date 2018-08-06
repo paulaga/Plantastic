@@ -20,6 +20,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { MatInputModule } from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { notifService } from '../services/notif.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     NoopAnimationsModule
   ],
-  providers: [SessionService, plantsService, wishService],
+  providers: [SessionService, plantsService, wishService, notifService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

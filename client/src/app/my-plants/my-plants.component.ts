@@ -3,6 +3,7 @@ import { plantsService } from '../../services/plants.service';
 import { Router } from '../../../node_modules/@angular/router';
 import { SessionService } from '../../services/session';
 import { FileUploader, FileItem } from '../../../node_modules/ng2-file-upload';
+import { notifService } from '../../services/notif.service';
 
 @Component({
   selector: 'app-my-plants',
@@ -15,7 +16,8 @@ export class MyPlantsComponent implements OnInit{
     url: `http://localhost:3000/api/plants`,
     method: 'POST'
   });
-
+  
+  notif: Array<Object> = [];
   plants: Array<Object> = [];
   newPlant: Object = {
     image: '',
@@ -32,8 +34,10 @@ export class MyPlantsComponent implements OnInit{
   };
   feedback;
 
-  constructor(private session: SessionService, private plantsService: plantsService, private router: Router) {
-
+  constructor(private session: SessionService, private notifService: notifService, private plantsService: plantsService, private router: Router) {
+    this.notifService.getNotif()
+    .subscribe(data => this.notif = data);
+    console.log("Siiiii")
   }
 
   ngOnInit() {

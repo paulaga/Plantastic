@@ -71,11 +71,9 @@ app.use(session({
 require('./passport')(app);
 
 //Cron counter
-app.use(function (err, req, res, next) {
-  new CronJob('* * * * *', function() {
-  lookForNotifications(req);
+new CronJob('* * * * *', function() {
+  lookForNotifications();
 }, null, true, 'Europe/Madrid');
-});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -88,6 +86,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const authRouter = require('./routes/auth');
 app.use('/api/auth', authRouter);
+const notifRouter = require('./routes/notif');
+app.use('/api/notif', notifRouter);
 const plantsRouter = require('./routes/plants');
 app.use('/api/plants', plantsRouter);
 const tipsRouter = require('./routes/tips');
