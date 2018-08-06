@@ -1,4 +1,4 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
   //New plant
     // $(".plus-btn").on("click", function(){
@@ -100,4 +100,4 @@
       showPass = 0;
     }
   });
-// });
+});

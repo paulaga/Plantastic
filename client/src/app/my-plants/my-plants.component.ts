@@ -33,14 +33,16 @@ export class MyPlantsComponent implements OnInit{
   feedback;
 
   constructor(private session: SessionService, private plantsService: plantsService, private router: Router) {
-    this.plantsService.getPlants(this.session.user._id)
-      .subscribe(data => {
-        this.plants = data;
-        this.refreshPlants();
-      });
+
   }
 
   ngOnInit() {
+    this.plantsService.getPlants(this.session.user._id)
+    .subscribe(data => {
+      this.plants = data;
+      this.refreshPlants();
+    });
+
     this.uploader.onSuccessItem = (item, response) => {
       this.feedback = JSON.parse(response).message;
     };
@@ -68,7 +70,8 @@ export class MyPlantsComponent implements OnInit{
     console.log(plant)
     this.uploader.onCompleteItem = () => {
       console.log(plant)
-      this.router.navigate(['/profile']);
+      this.refreshPlants();
+      //this.router.navigate(['/profile']);
     }
       //.subscribe(() => this.refreshPlants());
   }

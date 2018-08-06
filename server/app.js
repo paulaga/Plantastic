@@ -70,10 +70,12 @@ app.use(session({
 }));
 require('./passport')(app);
 
-// Cron counter
-//new CronJob('* * * * *', function() {
-//  lookForNotifications();
-//}, null, true, 'Europe/Madrid');
+//Cron counter
+app.use(function (err, req, res, next) {
+  new CronJob('* * * * *', function() {
+  lookForNotifications(req);
+}, null, true, 'Europe/Madrid');
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

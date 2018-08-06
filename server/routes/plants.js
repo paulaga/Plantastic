@@ -11,10 +11,7 @@ router.post('/', uploadCloud.single('file'), (req, res, next) => {
   if(req.file.url) { 
     newPlant.image = req.file.url
   }
-  console.log(newPlant)
-  console.log(newPlant.image)
   Plant.create(newPlant)
-    console.log("Its upload")
     .then(object => res.status(200).json(object))
     .catch(e => next(e));
 });
