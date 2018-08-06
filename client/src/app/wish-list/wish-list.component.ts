@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { wishService } from '../../services/wish.service';
-import { Router } from '../../../node_modules/@angular/router';
-import { SessionService } from '../../services/session';
+import { Router } from '@angular/router';
+import { SessionService } from '../../services/session.service';
 
 
 @Component({
@@ -13,18 +13,21 @@ export class WishListComponent implements OnInit {
   wish;
   newWish = {
     text: '',
-    author: this.session.user._id
+    author: ''
   };
 
   constructor(private session: SessionService, private wishService: wishService, private router: Router) { 
-    this.wishService.getWishes(this.session.user._id)
-      .subscribe(data => {
-        this.wish = data;
-        this.refreshWishes();
-      })
   }
-
+  
   ngOnInit() {
+    this.session.isLogged().subscribe(() => {
+      this.newWish["author"] = this.session.user._id;
+      this.wishService.getWishes(this.session.user._id)
+        .subscribe(data => {
+          this.wish = data;
+          this.refreshWishes();
+        })
+    });
   }
 
   submitWish(){

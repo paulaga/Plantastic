@@ -44,12 +44,12 @@ router.post('/signup', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, theUser, failureDetails) => {
-    
+  
     if (err) next(new Error('Something went wrong')); 
     if (!theUser) next(failureDetails)
-
+    
     login(req, theUser).then(user => res.status(200).json(req.user));
-
+    
   })(req, res, next);
 });
 

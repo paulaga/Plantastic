@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
-import { Router } from '../../../node_modules/@angular/router';
-import { SessionService } from '../../services/session';
-import { FileUploader, FileItem } from '../../../node_modules/ng2-file-upload';
+import { Router } from '@angular/router';
+import { SessionService } from '../../services/session.service';
+import { FileUploader, FileItem } from 'ng2-file-upload';
 import { notifService } from '../../services/notif.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class MyPlantsComponent implements OnInit{
     method: 'POST'
   });
   
-  notif: Array<Object> = [];
+  notif;
   plants: Array<Object> = [];
   newPlant: Object = {
     image: '',
@@ -30,30 +30,41 @@ export class MyPlantsComponent implements OnInit{
     nextWater: '',
     fertilize: '',
     transplant: '',
-    author: this.session.user._id
+    author: ''
   };
   feedback;
 
   constructor(private session: SessionService, private notifService: notifService, private plantsService: plantsService, private router: Router) {
-    this.notifService.getNotif()
-    .subscribe(data => this.notif = data);
-    console.log("Siiiii")
   }
-
+  
   ngOnInit() {
-    this.plantsService.getPlants(this.session.user._id)
-    .subscribe(data => {
-      this.plants = data;
-      this.refreshPlants();
-    });
+    this.session.isLogged().subscribe(() => {
+      if(this.session.user){
+        console.log("Siiiii");
+        this.newPlant["author"] = this.session.user._id;
+        // this.notif["author"] = this.session.user._id;
+      }
+      this.notifService.getNotif(this.session.user._id)
+      .subscribe(data => {
+        this.notif = data;
+        console.log(this.notif);
+      });
+  
+      this.plantsService.getPlants(this.session.user._id)
+      .subscribe(data => {
+        this.plants = data;
+        this.refreshPlants();
+      });
+  
+      this.uploader.onSuccessItem = (item, response) => {
+        this.feedback = JSON.parse(response).message;
+      };
+  
+      this.uploader.onErrorItem = (item, response, status, headers) => {
+        this.feedback = JSON.parse(response).message;
+      };
 
-    this.uploader.onSuccessItem = (item, response) => {
-      this.feedback = JSON.parse(response).message;
-    };
-
-    this.uploader.onErrorItem = (item, response, status, headers) => {
-      this.feedback = JSON.parse(response).message;
-    };
+    })
   }
 
   addPlant(plant){
@@ -71,13 +82,10 @@ export class MyPlantsComponent implements OnInit{
       form.append('author', this.session.user._id);
     }
     this.uploader.uploadAll();
-    console.log(plant)
     this.uploader.onCompleteItem = () => {
-      console.log(plant)
       this.refreshPlants();
       //this.router.navigate(['/profile']);
     }
-      //.subscribe(() => this.refreshPlants());
   }
 
   refreshPlants() {

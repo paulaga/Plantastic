@@ -1,7 +1,7 @@
-import { Injectable } from "../../node_modules/@angular/core";
+import { Injectable } from "@angular/core";
 import { environment } from '../environments/environment';
-import { Http } from "../../node_modules/@angular/http";
-import { map } from "../../node_modules/rxjs/operators";
+import { Http } from "@angular/http";
+import { map } from "rxjs/operators";
 
 const { BASEURL } = environment;
 

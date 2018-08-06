@@ -1,14 +1,14 @@
 <form class="login100-form validate-form">
   <h2 class="login100-form-title"> Login </h2>
   <div class="wrap-input100 validate-input">
-    <input class="input100" type="text" [(ngModel)]="username" name="username"/>
+    <input class="input100" [ngClass]="{'has-val': username !== string}" type="text" [(ngModel)]="username" name="username"/>
     <span class="focus-input100" data-placeholder="Username"></span>
   </div>
   <div class="wrap-input100 validate-input" data-validate="Password">
     <span class="btn-show-pass">
       <i class="zmdi zmdi-eye"></i>
     </span>
-    <input class="input100" type="password" [(ngModel)]="password" name="password">
+    <input class="input100" [ngClass]="{'has-val': password !== string}" type="password" [(ngModel)]="password" name="password">
     <span class="focus-input100" data-placeholder="Password"></span>
   </div>
   <div class="container-login100-form-btn">

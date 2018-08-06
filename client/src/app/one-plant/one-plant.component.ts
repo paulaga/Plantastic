@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
-import { ActivatedRoute, Router } from '../../../node_modules/@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 let es = moment.locale("es");
 

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
-import { Router } from '../../../node_modules/@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tips',

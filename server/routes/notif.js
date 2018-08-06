@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Notif  = require('../models/Notification');
+const Notif = require("../models/Notification");
 
 //Create New
 // router.post('/', uploadCloud.single('file'), (req, res, next) => {
 //   const { image, name, birth, light, room, waterTimes, lastWater, nextWater, fertilize, transplant, author } = req.body;
 //   const newPlant = { image, name, birth, light, room, waterTimes, lastWater, nextWater, fertilize, transplant, author };
-//   if(req.file.url) { 
+//   if(req.file.url) {
 //     newPlant.image = req.file.url
 //   }
 //   Plant.create(newPlant)
@@ -15,10 +15,13 @@ const Notif  = require('../models/Notification');
 // });
 
 //Read all
-router.get('/', (req, res, next) => {
-  Notif.find({ author: req.user._id })
-    .then(object => res.status(200).json(object))
-    .catch(e => next(e))
+router.post("/", (req, res, next) => {
+  console.log(req.body.user+ '<-------')
+  if (req.body) {
+    Notif.find({ author: req.body.user })
+      .then(object => res.status(200).json(object))
+      .catch(e => next(e));
+  }
 });
 
 //Read one

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '../../../node_modules/@angular/http';
+import { Http } from '@angular/http';
 import { notifService } from '../../services/notif.service';
-import { SessionService } from '../../services/session';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,9 +12,6 @@ export class ProfileComponent implements OnInit {
   notif: Array<Object> = [];
   
   constructor(private http: Http, private session: SessionService, private notifService: notifService) { 
-    this.notifService.getNotif()
-    .subscribe(data => this.notif = data);
-    console.log("Siiiii")
   }
 
   ngOnInit() {

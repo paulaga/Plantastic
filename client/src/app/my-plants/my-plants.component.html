@@ -2,8 +2,10 @@
   <p>  Empieza a cuidar tus plantas
   </p>
 </div> -->
-<div>
-  <p>{{notif.message}}</p>
+<div *ngIf="notif">
+  <div *ngFor="let n of notif">
+    <p>{{n.message}}</p>
+  </div>
 </div>
 <div *ngIf="plants">
   <div class="container cards-container">
@@ -32,23 +34,23 @@
   <div class="modal-dialog" role="document">
     <form class="login100-form modal-content">
       <div class="wrap-input100">
-        <input class="input100" type="text" [(ngModel)]="newPlant.name" name="name"/>
+        <input class="input100" type="text" [ngClass]="{'has-val': newPlant[name] > 0}" [(ngModel)]="newPlant.name" name="name"/>
         <span class="focus-input100" data-placeholder="Nombre"></span>
       </div>
       <div class="wrap-input100">
-        <input class="input100" type="text" [(ngModel)]="newPlant.light" name="light"/>
+        <input class="input100" type="text" [ngClass]="{'has-val': newPlant.light !== string}" [(ngModel)]="newPlant.light" name="light"/>
         <span class="focus-input100" data-placeholder="Cuánta luz necesita?"></span>
       </div>
       <div class="wrap-input100">
-        <input class="input100" type="text" [(ngModel)]="newPlant.room" name="room"/>
+        <input class="input100" type="text" [ngClass]="{'has-val': newPlant.room !== string}" [(ngModel)]="newPlant.room" name="room"/>
         <span class="focus-input100" data-placeholder="En qué habitación vive?"></span>
       </div>
       <div class="wrap-input100">
-        <input class="input100" type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
+        <input class="input100" type="number" [ngClass]="{'has-val': newPlant.waterTime !== string}" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
         <span class="focus-input100" data-placeholder="Cada cuántos días se debe regar?"></span>
       </div>
       <div class="wrap-input100">
-        <input class="input100" type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
+        <input class="input100 has-val" type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
         <span class="focus-input100" data-placeholder="Cuándo fue el último día que regaste?"></span>
       </div>
       <div class="wrap-input-file">

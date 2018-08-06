@@ -3,9 +3,7 @@
   <li><a [routerLink]="['/profile']">My plants</a></li>
   <li><a [routerLink]="['/wishlist']">My wishlist</a></li>
 </ul> -->
+
 <div class="profile-bg">
-    <div *ngIf="notif">
-        <p>{{notif.message}}</p>
-      </div>
   <router-outlet></router-outlet>
 </div>
