@@ -20,7 +20,7 @@ mongoose
     useMongoClient: true
   })
   .then(() => {
-    console.log(`Connected to Mongo on ${DBURL}`)
+    console.log(`Connected to Mongo`)
   }).catch(err => {
     console.error('Error connecting to mongo', err)
   });
@@ -84,8 +84,6 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
-const index = require('./routes/index');
-app.use('/', index);
 const authRouter = require('./routes/auth');
 app.use('/api/auth', authRouter);
 const notifRouter = require('./routes/notif');
@@ -96,5 +94,5 @@ const tipsRouter = require('./routes/tips');
 app.use('/api/tips', tipsRouter);
 const wishRouter = require('./routes/wishlist');
 app.use('/api/wishlist', wishRouter);
-
+app.use((req,res) => res.sendFile(__dirname+'/public/index.html'));
 module.exports = app;
