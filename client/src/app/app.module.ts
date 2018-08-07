@@ -16,10 +16,9 @@ import { OnePlantComponent } from './one-plant/one-plant.component';
 import { TipsComponent } from './tips/tips.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { wishService } from '../services/wish.service';
-import { FileSelectDirective } from 'ng2-file-upload';
-// import { MatInputModule } from '@angular/material/input';
+import { FileUploadModule } from 'ng2-file-upload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { notifService } from '../services/notif.service';
 import { SimpleNotificationsModule } from 'angular2-notifications'
 
@@ -33,7 +32,6 @@ import { SimpleNotificationsModule } from 'angular2-notifications'
     OnePlantComponent,
     TipsComponent,
     WishListComponent,
-    FileSelectDirective,
   ],
   imports: [
     BrowserModule,
@@ -41,9 +39,9 @@ import { SimpleNotificationsModule } from 'angular2-notifications'
     FormsModule,
     HttpModule,
     SimpleNotificationsModule.forRoot(),
-    // MatInputModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    FileUploadModule
   ],
   providers: [SessionService, plantsService, wishService, notifService],
   bootstrap: [AppComponent]
