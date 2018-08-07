@@ -24,18 +24,18 @@ export class MyPlantsComponent implements OnInit{
   notif;
   
   plants;
-  newPlant: Object = {
-    image: {type:string},
-    name: string,
-    birth: string,
-    light: string,
-    room: string,
-    waterTimes: string,
-    lastWater: date,
-    nextWater: string,
-    fertilize: string,
-    transplant: string,
-    author: string
+  newPlant = {
+    image: '',
+    name: '',
+    birth: '',
+    light: '',
+    room: '',
+    waterTimes: '',
+    lastWater: '',
+    nextWater: '',
+    fertilize: '',
+    transplant: '',
+    author: ''
   };
   feedback;                  
 
