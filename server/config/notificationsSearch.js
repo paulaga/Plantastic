@@ -36,10 +36,12 @@ function lookForNotifications() {
                   });
                 }else {
                   notifs.forEach(notif => {
-                    console.log(`Entraaaaaaa`)
+                    console.log(notif)
+                    console.log(notif.message)
                     if (
-                      notif.message !== `Hoy tienes que regar a ${plant.name}`
+                      notif.message != `Hoy tienes que regar a ${plant.name}`
                     ) {
+                      console.log(`Entraaaaaaa`)
                       /* let newNot = new Notif({
                         message: `Hoy tienes que regar a ${plant.name}`,
                         nextWater: plant.nextWater,

@@ -1,9 +1,10 @@
+<div *ngIf="plant">
 <div class="hero">
   <img [src]="plant.image" alt="Imagen de {{plant.name}}">
 </div>
 <div class="container one-plant-container">
   <div class="">
-  <div *ngIf="plant" class="plant-info-card">
+  <div class="plant-info-card">
     <p><span class="one-plant-info">Nombre</span> {{plant.name}}</p>
     <!-- <p><span class="one-plant-info">Nacimiento</span> {{plant.birth}}</p> -->
     <p><span class="one-plant-info">Luz</span> {{plant.light}}</p>
@@ -24,5 +25,5 @@
 </div>
   
 <button (click)="deletePlant(plant._id)" class="delete-btn">Eliminar planta</button>
-
+</div>
 <a [routerLink]="['/profile']">Back</a>

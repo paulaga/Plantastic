@@ -5,9 +5,9 @@ import { SessionService } from '../../services/session.service';
 import { FileUploader } from 'ng2-file-upload';
 import { notifService } from '../../services/notif.service';
 import { NotificationsService } from '../../../node_modules/angular2-notifications';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 
-// const { BASEURL } = environment;
+const { BASEURL } = environment;
 
 @Component({
   selector: 'app-my-plants',
@@ -17,7 +17,7 @@ import { environment } from '../../environments/environment.prod';
 export class MyPlantsComponent implements OnInit{
 
   uploader: FileUploader = new FileUploader({
-    url: `http://localhost:3000/api/plants`,
+    url: `${BASEURL}/api/plants`,
     method: 'POST'
   });
   
