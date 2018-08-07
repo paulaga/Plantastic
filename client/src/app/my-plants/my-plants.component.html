@@ -1,13 +1,16 @@
-<!-- <div *ngIf="!plants">
-  <p>  Empieza a cuidar tus plantas
-  </p>
-</div> -->
-<simple-notifications></simple-notifications>
-<!-- <div *ngIf="notif">
-  <div *ngFor="let n of notif">
-    <p>{{n.message}}</p>
+<div *ngIf="!plants">
+  <p>Empieza a cuidar tus plantas</p>
+  <div class="plant-card new-plant">
+    <div class="img-card-container">
+      <img src="../../assets/images/default.png" alt="plantita">
+    </div>
+    <button class="plus-btn" button type="button" data-toggle="modal" data-target="#exampleModal">+</button>
+    <p class="plus-txt">Añade una nueva planta</p>
   </div>
-</div> -->
+</div>
+
+<simple-notifications></simple-notifications>
+
 <div *ngIf="plants">
   <div class="container cards-container">
     <div *ngFor="let plant of plants" class="plant-card">
