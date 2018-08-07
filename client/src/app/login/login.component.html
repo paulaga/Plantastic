@@ -1,7 +1,7 @@
 <form class="login100-form validate-form">
   <h2 class="login100-form-title"> Login </h2>
   <div class="wrap-input100 validate-input">
-    <input class="input100" [ngClass]="{'has-val': username !== string}" type="text" [(ngModel)]="username" name="username"/>
+    <input class="input100" ng-click="string" [ngClass]="{'has-val': username !== string}" type="text" [(ngModel)]="username" name="username"/>
     <span class="focus-input100" data-placeholder="Username"></span>
   </div>
   <div class="wrap-input100 validate-input" data-validate="Password">
