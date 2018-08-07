@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
+  username: string;
+  password: string;
+
   constructor(private sessionService:SessionService, private router:Router) { }
 
   ngOnInit() {

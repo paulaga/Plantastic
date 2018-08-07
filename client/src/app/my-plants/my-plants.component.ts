@@ -23,7 +23,7 @@ export class MyPlantsComponent implements OnInit{
   
   notif;
   
-  plants: Array<Object> = [];
+  plants;
   newPlant: Object = {
     image: '',
     name: '',
