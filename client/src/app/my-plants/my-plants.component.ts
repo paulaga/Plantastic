@@ -44,7 +44,20 @@ export class MyPlantsComponent implements OnInit{
     private notifService: notifService, 
     private plantsService: plantsService, 
     private _service: NotificationsService,
-    private router: Router) {}
+    private router: Router) {
+
+      const toast = this._service.info({
+        clickToClose: true
+      });
+      
+      toast.click.subscribe()
+      // toast.click.subscribe(data => {
+      //   console.log(`Essss`+ data)
+      //   this.notif = data;
+      //   this.notifService.updateNotif(data.id, data.last);
+      //   console.log("llegó")
+      // });
+    }
   
   ngOnInit() {
     this.session.isLogged().subscribe(() => {
@@ -96,9 +109,8 @@ export class MyPlantsComponent implements OnInit{
     this.uploader.uploadAll();
     this.uploader.onCompleteItem = () => {
       this.refreshPlants();
-      //this.router.navigate(['/profile']);
     }
-  }
+  }  
 
   refreshPlants() {
     this.plantsService.getPlants(this.session.user._id)

@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+input:after, input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]){
+  border-bottom: 1px solid red;
+-webkit-box-shadow: 0 1px 0 0 red;
+box-shadow: 0 1px 0 0 red;
+}
+
 body{
   font-family: 'Lato', sans-serif;
   font-size: 16px;
@@ -8,16 +14,7 @@ body{
   height: 100vh;
   background: url('./assets/images/bg.gif') no-repeat;
   background-size: cover;
-  /* background: -moz-linear-gradient(45deg, rgba(38,166,153,1) 0%, rgba(38,166,153,1) 23%, rgba(46,204,112,1) 100%); */
-  /* background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(38,166,153,1)), color-stop(23%, rgba(38,166,153,1)), color-stop(100%, rgba(46,204,112,1))); */
-  /* background: -webkit-linear-gradient(45deg, rgba(38,166,153,1) 0%, rgba(38,166,153,1) 23%, rgba(46,204,112,1) 100%); */
-  /* background:  -o-linear-gradient(45deg, rgba(38,166,153,1) 0%, rgba(38,166,153,1) 23%, rgba(46,204,112,1) 100%); */
-  /* background:  -ms-linear-gradient(45deg, rgba(38,166,153,1) 0%, rgba(38,166,153,1) 23%, rgba(46,204,112,1) 100%); */
-  /* background: linear-gradient(45deg, rgba(38,166,153,1) 0%, rgba(38,166,153,1) 23%, rgba(46,204,112,1) 100%);  */
-  /* background: #2ecc70; */
-  /* background: #F9FBE7; */
-  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26a699', endColorstr='#2ecc70', GradientType=1 ); */
-}
+ }
 button{
   cursor: pointer;
 }

@@ -15,4 +15,9 @@ export class notifService {
     .pipe(map(res => res.json()));
   }
 
+  updateNotif(id, last){
+    return this.http.put(`${BASEURL}/api/notif/${id}`, last )
+    .pipe(map(res => res.json()));
+  }
+
 }
