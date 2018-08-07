@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
 import { Router } from '@angular/router';
 import { SessionService } from '../../services/session.service';
-import { FileUploader, FileItem } from 'ng2-file-upload';
+import { FileUploader } from 'ng2-file-upload';
 import { notifService } from '../../services/notif.service';
 import { NotificationsService } from '../../../node_modules/angular2-notifications';
+import { environment } from '../../environments/environment.prod';
+
+// const { BASEURL } = environment;
 
 @Component({
   selector: 'app-my-plants',
@@ -19,6 +22,7 @@ export class MyPlantsComponent implements OnInit{
   });
   
   notif;
+  
   plants: Array<Object> = [];
   newPlant: Object = {
     image: '',
@@ -33,34 +37,29 @@ export class MyPlantsComponent implements OnInit{
     transplant: '',
     author: ''
   };
-  feedback;
+  feedback;                  
 
   constructor(
     private session: SessionService, 
     private notifService: notifService, 
     private plantsService: plantsService, 
     private _service: NotificationsService,
-    private router: Router) {
-  }
+    private router: Router) {}
   
   ngOnInit() {
     this.session.isLogged().subscribe(() => {
-      if(this.session.user){
-        // this.newPlant["author"] = this.session.user._id;
-        // this.notif["author"] = this.session.user._id;
-      }
 
       this.notifService.getNotif(this.session.user._id)
       .subscribe(data => {
         this.notif = data;
-        console.log(this.notif.message);
         console.log(this.notif);
         let content = '';
         this.notif.forEach(e =>{
-          content = e.message;
+          if(content !== e.message){
+            content = e.message;
+            this._service.info(content);
+          }
         });
-        this._service.create(content);
-        // console.log(content);
       });
   
       this.plantsService.getPlants(this.session.user._id)
