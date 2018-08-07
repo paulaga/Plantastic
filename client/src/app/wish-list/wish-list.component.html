@@ -1,9 +1,9 @@
 <h2>Bienvenid@ a tu lista de deseos</h2>
 <h4>Aquí podrás anotar todas tus plantas soñadas y, quién sabe, quizás algún día se planten en tu casa</h4>
-<div *ngIf="!wishes">
+<div *ngIf="wish == 0">
   <h3>Aún no tienes ninguna nueva adquisición en mente?<br>Venga, seguro que algo habrá, una palmera, un limonero...</h3>
 </div>
-<div *ngIf="wishes">
+<div *ngIf="wish">
   <h3>Anota</h3>
   <ul *ngFor="let w of wish">
     <li>{{w.text}}</li>

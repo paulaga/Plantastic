@@ -25,6 +25,7 @@ export class WishListComponent implements OnInit {
       this.wishService.getWishes(this.session.user._id)
         .subscribe(data => {
           this.wish = data;
+          console.log(this.wish)
           this.refreshWishes();
         })
     });
