@@ -17,10 +17,11 @@ import { TipsComponent } from './tips/tips.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { wishService } from '../services/wish.service';
 import { FileSelectDirective } from 'ng2-file-upload';
-import { MatInputModule } from '@angular/material/input';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { notifService } from '../services/notif.service';
+import { SimpleNotificationsModule } from 'angular2-notifications'
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { notifService } from '../services/notif.service';
     RouterModule.forRoot(routes),
     FormsModule,
     HttpModule,
-    MatInputModule,
+    SimpleNotificationsModule.forRoot(),
+    // MatInputModule,
     BrowserAnimationsModule,
     NoopAnimationsModule
   ],
