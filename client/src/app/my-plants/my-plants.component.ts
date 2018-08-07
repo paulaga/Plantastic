@@ -25,17 +25,17 @@ export class MyPlantsComponent implements OnInit{
   
   plants;
   newPlant: Object = {
-    image: string,
+    image: {type:string},
     name: string,
     birth: string,
     light: string,
-    room: '',
-    waterTimes: '',
-    lastWater: '',
-    nextWater: '',
-    fertilize: '',
-    transplant: '',
-    author: ''
+    room: string,
+    waterTimes: string,
+    lastWater: date,
+    nextWater: string,
+    fertilize: string,
+    transplant: string,
+    author: string
   };
   feedback;                  
 
