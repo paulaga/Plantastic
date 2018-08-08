@@ -16,6 +16,7 @@
   <li *ngIf="!sessionService.user"><a [routerLink]="['/login']">Login</a></li>
   <li *ngIf="sessionService.user"><a [routerLink]="['/profile']">My plants</a></li>
   <li *ngIf="sessionService.user"><a [routerLink]="['/profile/wishlist']">My wishlist</a></li>
+  <li *ngIf="sessionService.user"><a [routerLink]="['/profile/playlist']">Playlist</a></li>
   <li *ngIf="sessionService.user"><a href="#" (click)="logout()">Logout</a></li>
 </ul>
 
