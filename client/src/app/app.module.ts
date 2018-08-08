@@ -20,7 +20,9 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { notifService } from '../services/notif.service';
-import { SimpleNotificationsModule } from 'angular2-notifications'
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { PlaylistComponent } from './playlist/playlist.component'
+import { playListService } from '../services/play.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications'
     OnePlantComponent,
     TipsComponent,
     WishListComponent,
+    PlaylistComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { SimpleNotificationsModule } from 'angular2-notifications'
     NoopAnimationsModule,
     FileUploadModule
   ],
-  providers: [SessionService, plantsService, wishService, notifService],
+  providers: [SessionService, plantsService, wishService, notifService, playListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

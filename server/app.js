@@ -94,5 +94,7 @@ const tipsRouter = require('./routes/tips');
 app.use('/api/tips', tipsRouter);
 const wishRouter = require('./routes/wishlist');
 app.use('/api/wishlist', wishRouter);
+const playRouter = require('./routes/playlist');
+app.use('/api/play', playRouter);
 app.use((req,res) => res.sendFile(__dirname+'/public/index.html'));
 module.exports = app;
