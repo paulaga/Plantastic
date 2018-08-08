@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { plantsService } from '../../services/plants.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { notifService } from '../../services/notif.service';
 import * as moment from 'moment';
 let es = moment.locale("es");
 
@@ -12,9 +13,11 @@ let es = moment.locale("es");
 export class OnePlantComponent implements OnInit {
   plant;
   plantId;
+  notif;
 
   constructor(
     private plantsService : plantsService,
+    private notifService : notifService,
     private router: Router, 
     private route: ActivatedRoute
   ) { 
@@ -37,11 +40,7 @@ export class OnePlantComponent implements OnInit {
   deletePlant(id){
     this.plantsService.removePlant(id)
     .subscribe(() => this.router.navigate(['/profile']));
+    this.notifService.removeNotif(notif._id).subscribe();
   }
 
 }
-//localeData.longDateFormat(dateFormat);
-// var fr = moment().locale('fr');
-// fr.localeData().months(moment([2012, 0])) // "janvier"
-// fr.locale('en');
-// fr.localeData().months(moment([2012, 0])) // "January"

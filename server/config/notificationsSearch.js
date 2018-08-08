@@ -23,6 +23,7 @@ function lookForNotifications() {
               Notif.create({
                 message: `Hoy tienes que regar a ${plant.name}`,
                 nextWater: plant.nextWater,
+                plantId: plant._id,
                 author: user._id
               });
             } else {
@@ -32,6 +33,7 @@ function lookForNotifications() {
                   Notif.create({
                     message: `Hoy tienes que regar a ${plant.name}`,
                     nextWater: plant.nextWater,
+                    plantId: plant._id,
                     author: user._id
                   });
                 }

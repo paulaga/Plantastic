@@ -15,8 +15,8 @@ export class notifService {
     .pipe(map(res => res.json()));
   }
 
-  updateNotif(id, last){
-    return this.http.put(`${BASEURL}/api/notif/${id}`, last )
+  removeNotif(id){
+    return this.http.delete(`${BASEURL}/api/notif/${id}`)
     .pipe(map(res => res.json()));
   }
 

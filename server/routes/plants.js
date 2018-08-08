@@ -33,8 +33,9 @@ router.get('/:id', (req, res, next) => {
 //Update
 router.put('/:id', (req,res,next) => {
   const plantId = req.params.id;
-  const update = req.body;
-  Plant.findByIdAndUpdate(plantId, update, { new: true })
+  const {update} = req.body;
+  console.log(update)
+  Plant.findByIdAndUpdate(plantId, {lastWater: update}, { new: true })
     .then(object => res.status(200).json(object))
     .catch(e => next(e));
 });

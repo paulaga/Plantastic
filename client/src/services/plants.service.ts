@@ -30,6 +30,12 @@ export class plantsService {
     .pipe(map(res => res.json()));
   }
 
+  updatePlant(id, update){
+    console.log("Service last Water" + update)
+    return this.http.put(`${BASEURL}/api/plants/${id}`, {update})
+    .pipe(map(res => res.json()));
+  }
+
   removePlant(id){
     return this.http.delete(`${BASEURL}/api/plants/${id}`)
     .pipe(map(res => res.json()));
