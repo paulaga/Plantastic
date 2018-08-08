@@ -1,3 +1,9 @@
+/* Notifications */
+.simple-notification.info{
+  background: #2ECC71 !important;
+}
+
+
 /* You can add global styles to this file, and also import other style files */
 input:after, input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]){
   border-bottom: 1px solid red;
