@@ -39,8 +39,10 @@ export class OnePlantComponent implements OnInit {
 
   deletePlant(id){
     this.plantsService.removePlant(id)
-    .subscribe(() => this.router.navigate(['/profile']));
-    this.notifService.removeNotif(notif._id).subscribe();
+    .subscribe(() => {
+      this.notifService.removeNotif(id).subscribe(() => 
+      this.router.navigate(['/profile']))
+    });    
   }
 
 }

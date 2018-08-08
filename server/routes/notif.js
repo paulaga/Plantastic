@@ -24,8 +24,9 @@ router.post("/", (req, res, next) => {
 // });
 
 //Delete
-router.delete("/:id", (req, res, next) => {
-  Notif.findByIdAndRemove(req.params.id)
+router.delete("/:plantId", (req, res, next) => {
+  console.log(req.params.plantId)
+  Notif.deleteMany({plantId: req.params.plantId})
     .then(object => res.status(200).json(object))
     .catch(e => next(e));
 });
