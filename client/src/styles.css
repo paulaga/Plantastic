@@ -4,12 +4,36 @@
 }
 
 
-/* You can add global styles to this file, and also import other style files */
-input:after, input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]){
-  border-bottom: 1px solid red;
--webkit-box-shadow: 0 1px 0 0 red;
-box-shadow: 0 1px 0 0 red;
+/* Input */
+.input-field{
+margin-top: 36px;
 }
+
+input:after, 
+input:not([type]):focus:not([readonly]), 
+input:not([type]):focus:not([readonly]), 
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly])
+input[type=date]:not(.browser-default):focus:not([readonly])
+{
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  
+  border-bottom: 2px solid -webkit-linear-gradient(left, #2ECC71, #26A69A);
+  -webkit-box-shadow: 0 2px 0 0 #26a69a;
+  box-shadow: 0 2px 0 0 #26a69a;
+}
+
+.input-field>label{
+  font-size: 1em;
+}
+.input-field>label:not(.label-icon).active {
+  -webkit-transform: translateY(-18px) scale(0.85);
+  transform: translateY(-18px) scale(.85)
+}
+
 
 body{
   font-family: 'Lato', sans-serif;

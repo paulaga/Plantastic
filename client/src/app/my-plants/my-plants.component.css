@@ -54,17 +54,22 @@
   left: 50%;
 }
 .plus-btn:hover, .plus-btn:active{
-  background: #138D75;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  background: -webkit-linear-gradient(left, #2ECC71, #26A69A);
 }
-  /* border: 8px solid #FFF;
-  width: 66px;
-  height: 66px;
-  margin-left: -33px;
-  bottom: 29px; */
 
 .plus-txt{
   font-size: .8em;
   text-transform: uppercase;
   text-align: center;
   margin-top: 20px;
+}
+
+/* from Modal */
+.modal{
+  max-height: 90vh;
+  padding: 10px 40px;
 }

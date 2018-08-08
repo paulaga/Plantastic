@@ -4,20 +4,47 @@
   <h1 *ngIf="sessionService.user" >Welcome {{ sessionService.user.username }}!</h1>
 </div>
 
-<!-- <nav class="nav nav-pills nav-justified">
-    <a class="nav-link active" href="#">Active</a>
-    <a class="nav-link" href="#">Longer nav link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </nav> -->
-<ul>
+<!-- 
+  <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Plantastic</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" [routerLink]="['/']">Plantastic</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+            <i class="fa fa-bars"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" [routerLink]="['/']">HOME</a></li>
+            <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/signup']">Signup</a></li>
+            <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/login']">Login</a></li>
+            <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile']">My plants</a></li>
+            <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/wishlist']">My wishlist</a></li>
+            <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/playlist']">Playlist</a></li>
+            <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" href="#" (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+<!-- <ul class="navbar-nav">
   <li><a [routerLink]="['/']">HOME</a></li>
-  <li *ngIf="!sessionService.user"><a [routerLink]="['/signup']">Signup</a></li>
-  <li *ngIf="!sessionService.user"><a [routerLink]="['/login']">Login</a></li>
-  <li *ngIf="sessionService.user"><a [routerLink]="['/profile']">My plants</a></li>
-  <li *ngIf="sessionService.user"><a [routerLink]="['/profile/wishlist']">My wishlist</a></li>
-  <li *ngIf="sessionService.user"><a [routerLink]="['/profile/playlist']">Playlist</a></li>
-  <li *ngIf="sessionService.user"><a href="#" (click)="logout()">Logout</a></li>
-</ul>
+  <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/signup']">Signup</a></li>
+  <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/login']">Login</a></li>
+  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile']">My plants</a></li>
+  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/wishlist']">My wishlist</a></li>
+  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/playlist']">Playlist</a></li>
+  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" href="#" (click)="logout()">Logout</a></li>
+</ul> -->
 
 <router-outlet></router-outlet>
