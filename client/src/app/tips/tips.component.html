@@ -1,10 +1,17 @@
-<h2>Tips</h2>
-<div *ngIf="tips">
-  <ul *ngFor="let tip of tips">
-    <li>{{tip.text}}</li>
-  </ul>
+<div class="tips">
+  <h2>Consejos</h2>
+  <div *ngIf="tips">
+    <ul *ngFor="let tip of tips">
+      <li><i class="fab fa-pagelines"></i> {{tip.text}}</li>
+    </ul>
+  </div>
+  <form>
+    <input type="text" [(ngModel)]="newTip.text" name="text" placeholder="Añade tus consejos">
+    <div class="container-login100-form-btn">
+      <div class="wrap-login100-form-btn">
+        <div class="login100-form-bgbtn"></div>
+        <button type="button" (click)="submitTip()" class="login100-form-btn" data-dismiss="modal">Añadir</button>
+      </div>
+    </div>
+  </form>
 </div>
-<form>
-  <input type="text" [(ngModel)]="newTip.text" name="text" placeholder="Algo que añadir...">
-  <button (click)="submitTip()">Añadir</button>
-</form>

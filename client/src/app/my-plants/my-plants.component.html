@@ -19,8 +19,10 @@
       </div>
       <div class="info-card-container">
         <h4>{{plant.name}}</h4>
-        <p><i class="fas fa-tint"></i> Cada {{plant.waterTimes}} días</p>
-        <a [routerLink]="['plants',plant._id]"><i class="zmdi zmdi-flower-alt"></i> ver planta</a>
+        <p>
+          <i class="fas fa-tint"></i> Cada {{plant.waterTimes}} días</p>
+        <a [routerLink]="['plants',plant._id]">
+          <i class="zmdi zmdi-flower-alt"></i> ver planta</a>
       </div>
     </div>
     <div class="plant-card new-plant">
@@ -32,154 +34,48 @@
     </div>
   </div>
 </div>
-  
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <!-- <div class="modal-dialog" role="document"> -->
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
       <form class="validate-form">
-      <!-- <form class="login100-form validate-form"> -->
-          <!-- <h2 class="login100-form-title"> Login </h2> -->
-          <div class="input-field">
-            <input type="text" [(ngModel)]="newPlant.name" name="name"/>
-            <label class="focus-input100">Nombre</label>
-          </div>
-          <div class="input-field">
-            <input type="text" [(ngModel)]="newPlant.light" name="light"/>
-            <label class="focus-input100">Cuánta luz necesita?</label>
-          </div>
-          <div class="input-field">
-            <input type="text" [(ngModel)]="newPlant.room" name="room"/>
-            <label class="focus-input100">En qué habitación vive?</label>
-          </div>
-          <div class="input-field">
-            <input type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
-            <label class="focus-input100">Cada cuántos días se debe regar?</label>
-          </div>
-          <div class="input-field">
-            <input type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
-            <label class="focus-input100 date-label">Cuándo la regaste por última vez?</label>
-          </div>
-          <div class="input-field">
-            <input type="text" [(ngModel)]="newPlant.transplant" name="transplant"/>
-            <label class="focus-input100">En qué meses hay que trasplantarla?</label>
-          </div>
-          <div class="wrap-input-file">
-            <input class="input100" type="file" name="file" ng2FileSelect [uploader]="uploader"/>
-          </div>
-          <div class="container-login100-form-btn">
-            <div class="wrap-login100-form-btn">
-              <div class="login100-form-bgbtn"></div>
-              <button type="button" (click)="addPlant(newPlant)" class="login100-form-btn" data-dismiss="modal"> Tienes una nueva habitante </button>
-            </div>
-          </div>
-        </form>
+        <!-- <form class="login100-form validate-form"> -->
+        <!-- <h2 class="login100-form-title"> Login </h2> -->
+        <div class="input-field">
+          <input type="text" [(ngModel)]="newPlant.name" name="name" />
+          <label class="focus-input100">Nombre</label>
         </div>
-      <!-- </div> -->
-
-
-
-
-    <!-- <form class="login100-form modal-content">
-      <div class="wrap-input100">
-        <input class="input100" type="text" [(ngModel)]="newPlant.name" name="name"/>
-        <span class="focus-input100" data-placeholder="Nombre"></span>
-      </div>
-      <div class="wrap-input100">
-        <input class="input100" type="text" [(ngModel)]="newPlant.light" name="light"/>
-        <span class="focus-input100" data-placeholder="Cuánta luz necesita?"></span>
-      </div>
-      <div class="wrap-input100">
-        <input class="input100" type="text" [(ngModel)]="newPlant.room" name="room"/>
-        <span class="focus-input100" data-placeholder="En qué habitación vive?"></span>
-      </div>
-      <div class="wrap-input100">
-        <input class="input100" type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
-        <span class="focus-input100" data-placeholder="Cada cuántos días se debe regar?"></span>
-      </div>
-      <div class="wrap-input100">
-        <input class="input100 has-val" type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
-        <span class="focus-input100" data-placeholder="Cuándo fue el último día que regaste?"></span>
-      </div>
-      <div class="wrap-input-file">
-        <input class="input100" type="file" name="file" ng2FileSelect [uploader]="uploader"/>
-      </div>  
-      <div class="container-login100-form-btn">
-        <div class="wrap-login100-form-btn">
-          <div class="login100-form-bgbtn"></div>
-          <button type="submit" (click)="addPlant(newPlant)" class="login100-form-btn" data-dismiss="modal"> Tienes una nueva habitante </button>
+        <div class="input-field">
+          <input type="text" [(ngModel)]="newPlant.light" name="light" />
+          <label class="focus-input100">Cuánta luz necesita?</label>
         </div>
-      </div>
-    </form> -->
-  <!-- </div> -->
-<!-- </div> -->
-
-
-
-<!-----------  Nueva planta Form -->
-<!-- <div id="newPlantForm">
-  <form class="login100-form">
-    <div class="wrap-input100">
-      <input class="input100" type="text" [(ngModel)]="newPlant.name" name="name"/>
-      <span class="focus-input100" data-placeholder="Nombre"></span>
+        <div class="input-field">
+          <input type="text" [(ngModel)]="newPlant.room" name="room" />
+          <label class="focus-input100">En qué habitación vive?</label>
+        </div>
+        <div class="input-field">
+          <input type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes" />
+          <label class="focus-input100">Cada cuántos días se debe regar?</label>
+        </div>
+        <div class="input-field">
+          <input type="date" [(ngModel)]="newPlant.lastWater" name="lastWater" />
+          <label class="focus-input100 date-label">Cuándo la regaste por última vez?</label>
+        </div>
+        <div class="input-field">
+          <input type="text" [(ngModel)]="newPlant.transplant" name="transplant" />
+          <label class="focus-input100">En qué meses hay que trasplantarla?</label>
+        </div>
+        <div class="wrap-input-file">
+          <input class="input100" type="file" name="file" ng2FileSelect [uploader]="uploader" />
+        </div>
+        <div class="container-login100-form-btn">
+          <div class="wrap-login100-form-btn">
+            <div class="login100-form-bgbtn"></div>
+            <button type="button" (click)="addPlant(newPlant)" class="login100-form-btn" data-dismiss="modal"> Tienes una nueva habitante </button>
+          </div>
+        </div>
+      </form>
     </div>
-    <div class="wrap-input100">
-      <input class="input100" type="text" [(ngModel)]="newPlant.light" name="light"/>
-      <span class="focus-input100" data-placeholder="Cuánta luz necesita?"></span>
-    </div>
-    <div class="wrap-input100">
-      <input class="input100" type="text" [(ngModel)]="newPlant.room" name="room"/>
-      <span class="focus-input100" data-placeholder="En qué habitación vive?"></span>
-    </div>
-    <div class="wrap-input100">
-      <input class="input100" type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
-      <span class="focus-input100" data-placeholder="Cada cuántos días se debe regar?"></span>
-    </div>
-    <div class="wrap-input100">
-      <input class="input100" type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
-      <span class="focus-input100" data-placeholder="Cuándo fue el último día que regaste?"></span>
-    </div>
-    <div class="wrap-input-file">
-      <input class="input100" type="file" name="file" ng2FileSelect [uploader]="uploader"/>
-    </div>
-    
-    <div class="container-login100-form-btn">
-      <div class="wrap-login100-form-btn">
-        <div class="login100-form-bgbtn"></div>
-        <button type="submit" (click)="addPlant(newPlant)" class="login100-form-btn"> Tienes una nueva habitante </button>
-      </div>
-    </div>
-  </form>
-</div> -->
-
-
-
-
-
-
-
-
-<!-- <h2> Añade tu planta </h2>
-  <form>
-  <label> Foto </label>
-  <input type="file" name="file" ng2FileSelect [uploader]="uploader">
-
-  <label> Nombre </label>
-  <input type="text" [(ngModel)]="newPlant.name" name="name"/>
-
-  <label> Nacimiento </label>
-  <input type="date" [(ngModel)]="newPlant.birth" name="birth"/>
-
-  <label> Cuánta luz necesita?</label>
-  <input type="text" [(ngModel)]="newPlant.light" name="light"/>
-
-  <label> En qué habitación vive?</label>
-  <input type="text" [(ngModel)]="newPlant.room" name="room"/>
-
-  <label> Cada cuántos días se debe regar?</label>
-  <input type="number" [(ngModel)]="newPlant.waterTimes" name="waterTimes"/>
-
-  <label> Cuándo fue el último día que regaste?</label>
-  <input type="date" [(ngModel)]="newPlant.lastWater" name="lastWater"/>
-
-  <button type="submit" (click)="addPlant(newPlant)"> Tienes una nueva habitante </button>
-</form> -->
+  </div>
+</div>

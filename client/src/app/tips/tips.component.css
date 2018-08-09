@@ -1,0 +1,18 @@
+.fa-pagelines{
+  color: #2ECC71;
+  margin-right: 5px;
+}
+.tips{
+  width: 80%;
+  margin: 0 auto 50px auto;
+}
+h2{
+  color: #2ECC71;
+  font-weight: 900;
+  margin-bottom: 20px;
+  padding-bottom: 3px;
+  border-bottom: 1px dotted #2ECC71;
+}
+form{
+  margin-top: 40px;
+}

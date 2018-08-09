@@ -1,30 +1,31 @@
 <div *ngIf="plant">
-<div class="hero">
-  <img [src]="plant.image" alt="Imagen de {{plant.name}}">
-</div>
-<div class="container one-plant-container">
-  <div class="">
-  <div class="plant-info-card">
-    <p><span class="one-plant-info">Nombre</span> {{plant.name}}</p>
-    <!-- <p><span class="one-plant-info">Nacimiento</span> {{plant.birth}}</p> -->
-    <p><span class="one-plant-info">Luz</span> {{plant.light}}</p>
-    <p><span class="one-plant-info">Habitación</span> {{plant.room}}</p>
-    <img [src]="plant.image" class="circle-plant-img" alt="Imagen de {{plant.name}}">
+  <div class="hero">
+    <img [src]="plant.image" alt="Imagen de {{plant.name}}">
   </div>
-  <div class="plant-info-card important-info">
-    <h2>Fechas importantes</h2>
-    <p><span class="one-plant-info b-white">Riego</span> Cada {{plant.waterTimes}} días</p>
-    <p><span class="one-plant-info b-white">Último riego</span> {{plant.lastWater}}</p>
-    <p><span class="one-plant-info b-white">Próximo riego</span> {{plant.nextWater}}</p>
-    <!-- <p><span class="one-plant-info b-white">Abonar</span> {{plant.fertilize}}</p> -->
-    <p><span class="one-plant-info b-white">Trasplantar</span> {{plant.transplant}}</p>
+  <div class="container one-plant-container">
+    <div class="">
+      <div class="plant-info-card">
+        <p><span class="one-plant-info">Nombre</span> {{plant.name}}</p>
+        <!-- <p><span class="one-plant-info">Nacimiento</span> {{plant.birth}}</p> -->
+        <p><span class="one-plant-info">Luz</span> {{plant.light}}</p>
+        <p><span class="one-plant-info">Habitación</span> {{plant.room}}</p>
+        <img [src]="plant.image" class="circle-plant-img" alt="Imagen de {{plant.name}}">
+      </div>
+      <div class="plant-info-card important-info">
+        <h2>Fechas importantes</h2>
+        <p><span class="one-plant-info b-white">Riego</span> Cada {{plant.waterTimes}} días</p>
+        <p><span class="one-plant-info b-white">Último riego</span> {{plant.lastWater}}</p>
+        <p><span class="one-plant-info b-white">Próximo riego</span> {{plant.nextWater}}</p>
+        <!-- <p><span class="one-plant-info b-white">Abonar</span> {{plant.fertilize}}</p> -->
+        <p><span class="one-plant-info b-white">Trasplantar</span> {{plant.transplant}}</p>
+      </div>
+      <div class="tips-cont">
+        <app-tips [plant]="plantId"></app-tips>
+      </div>
+    </div>
   </div>
+  <button (click)="deletePlant(plant._id)" class="delete-btn"><i class="far fa-trash-alt"></i></button>
 </div>
-
-  <app-tips [plant]="plantId"></app-tips>
-</div>
-  
-<button (click)="deletePlant(plant._id)" class="delete-btn">Eliminar planta</button>
-</div>
-<a [routerLink]="['/profile']"><i class="zmdi zmdi-chevron-left"></i>
-  Back</a>
+<a [routerLink]="['/profile']">
+  <i class="zmdi zmdi-chevron-left"></i>
+</a>

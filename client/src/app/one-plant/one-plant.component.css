@@ -62,3 +62,18 @@
     -ms-filter: blur(4px);
     filter: blur(4px);
 }
+/* Back to myplants */
+.zmdi-chevron-left{
+  position: fixed;
+  top: 46%;
+  left: 40px;
+  font-size: 3em;
+  color: #2ECC71;
+}
+.fa-trash-alt{
+  position: fixed;
+  top: 46%;
+  font-size: 3em;
+  color: #2ECC71;
+  right: 40px;
+}
