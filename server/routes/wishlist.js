@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Wish = require('../models/Wish');
+const { ensureLoggedIn } = require('../middleware/ensurelogin');
 
 //Create New
 router.post('/', (req, res, next) => {
@@ -12,14 +13,14 @@ router.post('/', (req, res, next) => {
 });
 
 //Read all
-router.get('/:author', (req, res, next) => {
+router.get('/:author', ensureLoggedIn(), (req, res, next) => {
   Wish.find({ author: req.params.author })
     .then(object => res.status(200).json(object))
     .catch(e => next(e))
 });
 
 //Delete
-router.delete('/:id', (req,res,next) => {
+router.delete('/:id', ensureLoggedIn(), (req,res,next) => {
   const wish = req.params.id;
   Wish.findByIdAndRemove(wish)
     .then(() => res.status(200).json({message: `Eliminado ${req.params.id}`}))

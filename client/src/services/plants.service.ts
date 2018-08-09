@@ -9,16 +9,17 @@ const { BASEURL } = environment;
 export class plantsService {
   plant;
   tip;
+  options: object = { withCredentials:true };
 
   constructor(private http: Http) {}
 
   getPlants(author){
-    return this.http.get(`${BASEURL}/api/plants/list/${author}`)
+    return this.http.get(`${BASEURL}/api/plants/list/${author}`, this.options)
     .pipe(map(res => res.json()));
   }
 
   getOnePlant(id){
-    return this.http.get(`${BASEURL}/api/plants/${id}`)
+    return this.http.get(`${BASEURL}/api/plants/${id}`, this.options)
     .pipe(map((res:Response) => {
       this.plant = res.json();
       return this.plant;
@@ -26,29 +27,29 @@ export class plantsService {
   }
 
   newPlant(plant){
-    return this.http.post(`${BASEURL}/api/plants/`, plant)
+    return this.http.post(`${BASEURL}/api/plants/`, plant, this.options)
     .pipe(map(res => res.json()));
   }
 
   updatePlant(id, update){
     console.log("Service last Water" + update)
-    return this.http.put(`${BASEURL}/api/plants/${id}`, {update})
+    return this.http.put(`${BASEURL}/api/plants/${id}`, {update}, this.options)
     .pipe(map(res => res.json()));
   }
 
   removePlant(id){
-    return this.http.delete(`${BASEURL}/api/plants/${id}`)
+    return this.http.delete(`${BASEURL}/api/plants/${id}`, this.options)
     .pipe(map(res => res.json()));
   }
 
   // Plant Tips
   createTips(tip){
-    return this.http.post(`${BASEURL}/api/tips/`, tip)
+    return this.http.post(`${BASEURL}/api/tips/`, tip, this.options)
     .pipe(map(res => res.json()));
   }
 
   getTips(plantId){
-    return this.http.get(`${BASEURL}/api/tips/${plantId}`)
+    return this.http.get(`${BASEURL}/api/tips/${plantId}`, this.options)
     .pipe(map(res => res.json()));
   }
 }

@@ -6,7 +6,7 @@ import { notifService } from "../../services/notif.service";
 import { NotificationsService } from "../../../node_modules/angular2-notifications";
 import { environment } from "../../environments/environment";
 import * as moment from 'moment';
-import { ThrowStmt } from "../../../node_modules/@angular/compiler";
+import { Router } from "../../../node_modules/@angular/router";
 let es = moment.locale("es");
 
 const { BASEURL } = environment;
@@ -43,6 +43,7 @@ export class MyPlantsComponent implements OnInit {
 
   constructor(
     private session: SessionService,
+    private router: Router,
     private notifService: notifService,
     private plantsService: plantsService,
     private _service: NotificationsService
@@ -66,7 +67,7 @@ export class MyPlantsComponent implements OnInit {
                   plant.lastWater = moment().format();
                   let updateLast = plant.lastWater;
                   this.plantsService.updatePlant(plant._id, updateLast).subscribe();
-                  this.notifService.removeNotif(e._id).subscribe();
+                  this.notifService.removeNotif(e.plantId).subscribe();
                 }
               })
             });
@@ -96,7 +97,7 @@ export class MyPlantsComponent implements OnInit {
       .subscribe((plant: any) => {
         this.newPlant = plant;
         console.log(plant)
-        this.refreshPlants()
+        this.router.navigate([`/profile/plants/`, plant._id]);
       })
     } else {
       this.uploader.onBuildItemForm = (item, form) => {
@@ -113,7 +114,7 @@ export class MyPlantsComponent implements OnInit {
       };
       this.uploader.uploadAll();
       this.uploader.onCompleteItem = () => {
-        this.refreshPlants();
+        this.router.navigate(['/profile'], plant._id);
       };
     }
   }

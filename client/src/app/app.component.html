@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1 *ngIf="!sessionService.user" >Welcome to {{ title }}!</h1>
   <h1 *ngIf="sessionService.user" >Welcome {{ sessionService.user.username }}!</h1>
-</div>
+</div> -->
 
 <!-- 
   <nav>
@@ -16,16 +16,16 @@
       </div>
     </nav> -->
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" [routerLink]="['/']">Plantastic</a>
+        <a class="navbar-brand" [routerLink]="['/']">Plantast<span class="b-green">!</span>c</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon">
-            <i class="fa fa-bars"></i>
+            <i class="zmdi zmdi-menu"></i>
           </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" [routerLink]="['/']">HOME</a></li>
+            <li class="nav-item"><a class="nav-link active" [routerLink]="['/']">HOME</a></li>
             <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/signup']">Signup</a></li>
             <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/login']">Login</a></li>
             <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile']">My plants</a></li>

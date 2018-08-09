@@ -8,10 +8,12 @@ const { BASEURL } = environment;
 @Injectable()
 export class playListService {
 
+  options: object = { withCredentials:true };
+
   constructor(private http: Http) {}
 
   getPlaylist(){
-    return this.http.get(`${BASEURL}/api/play`)
+    return this.http.get(`${BASEURL}/api/play`, this.options)
     .pipe(map(res => res.json()));
   }
   

@@ -3,6 +3,7 @@ const router = express.Router();
 const Plant = require('../models/Plant');
 const multer = require('multer')
 const uploadCloud = require('../config/cloudinary')
+const { ensureLoggedIn } = require('../middleware/ensurelogin');
 
 //Create New
 router.post('/', uploadCloud.single('file'), (req, res, next) => {
@@ -17,21 +18,21 @@ router.post('/', uploadCloud.single('file'), (req, res, next) => {
 });
 
 //Read all
-router.get('/list/:author', (req, res, next) => {
+router.get('/list/:author', ensureLoggedIn(), (req, res, next) => {
   Plant.find({ author: req.params.author })
     .then(object => res.status(200).json(object))
     .catch(e => next(e))
 });
 
 //Read one
-router.get('/:id', (req, res, next) => {
+router.get('/:id', ensureLoggedIn(), (req, res, next) => {
   Plant.findById(req.params.id)
     .then(object => res.status(200).json(object))
     .catch(e => next(e))
 });
 
 //Update
-router.put('/:id', (req,res,next) => {
+router.put('/:id', ensureLoggedIn(), (req,res,next) => {
   const plantId = req.params.id;
   const {update} = req.body;
   console.log(update)
@@ -41,7 +42,7 @@ router.put('/:id', (req,res,next) => {
 });
 
 //Delete
-router.delete('/:id', (req,res,next) => {
+router.delete('/:id', ensureLoggedIn(), (req,res,next) => {
   const plantId = req.params.id;
   Plant.findByIdAndRemove(plantId)
     .then(object => res.status(200).json(object))

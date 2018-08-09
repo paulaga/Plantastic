@@ -1,0 +1,27 @@
+.zmdi-playlist-audio{
+  margin: 2px 8px 0 0;
+  font-size: 1.3em;
+}
+.music-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.song{
+  display: flex;
+  align-items: center;
+}
+/* audio{
+  margin-left: 30px;
+} */
+.play-card{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 0;
+}
+img{
+  width: 70%;
+  margin: 0 auto;
+}

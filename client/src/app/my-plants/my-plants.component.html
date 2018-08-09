@@ -34,8 +34,9 @@
 </div>
   
 <!-- Modal -->
-<form class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <!-- <div class="modal-dialog" role="document"> -->
+      <form class="validate-form">
       <!-- <form class="login100-form validate-form"> -->
           <!-- <h2 class="login100-form-title"> Login </h2> -->
           <div class="input-field">
@@ -65,14 +66,15 @@
           <div class="wrap-input-file">
             <input class="input100" type="file" name="file" ng2FileSelect [uploader]="uploader"/>
           </div>
-          
           <div class="container-login100-form-btn">
             <div class="wrap-login100-form-btn">
               <div class="login100-form-bgbtn"></div>
-              <button type="submit" (click)="addPlant(newPlant)" class="login100-form-btn" data-dismiss="modal"> Tienes una nueva habitante </button>
+              <button type="button" (click)="addPlant(newPlant)" class="login100-form-btn" data-dismiss="modal"> Tienes una nueva habitante </button>
             </div>
           </div>
         </form>
+        </div>
+      <!-- </div> -->
 
 
 
@@ -109,7 +111,7 @@
       </div>
     </form> -->
   <!-- </div> -->
-<!-- </form> -->
+<!-- </div> -->
 
 
 

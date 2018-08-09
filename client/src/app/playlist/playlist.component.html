@@ -1,10 +1,18 @@
 <h2>Música para regar</h2>
+<div class="container music-container">
+  <div *ngIf="playList">
+    <div class="play-card" *ngFor="let play of playList.tracks.items">
+      <div>
+        <p class="song"><i class="zmdi zmdi-playlist-audio b-green"></i><span class="b-green">{{play.track.name}}</span>
+          {{play.track.artists[0].name}}</p>
+        <audio controls>
+          <source [src]="play.track.preview_url">
+        </audio>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img src="../../assets/images/planta_2.png" alt="Regando plantas">
+  </div>
+</div>
 
-<div *ngIf="playList">
-<div *ngFor="let play of playList.tracks.items">
-  <p>{{play.track.name}} - {{play.track.artists[0].name}}</p>
-  <audio controls>
-  <source [src]="play.track.preview_url">
-  </audio>
-</div>
-</div>
