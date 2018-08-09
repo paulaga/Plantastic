@@ -1,3 +1,24 @@
+.playlist-cont{
+background: url('../../assets/images/cactus.jpg') no-repeat;
+width: 100%;
+height: 100%;
+background-size: cover;
+}
+.container{
+  width: 80%;
+  padding: 50px 0;
+}
+.margin{
+  margin-right: 5px;
+}
+b{
+  font-weight: 600;
+}
+h2{
+  color: #2ECC71;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
 .zmdi-playlist-audio{
   margin: 2px 8px 0 0;
   font-size: 1.3em;
@@ -8,20 +29,31 @@
   justify-content: space-between;
   align-items: center;
 }
-.song{
-  display: flex;
-  align-items: center;
-}
-/* audio{
-  margin-left: 30px;
+/* .song-card{
+  margin: 0 auto;
 } */
+ .song{
+  margin-bottom: 10px;
+} 
 .play-card{
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
-  margin: 20px 0;
+  margin: 20px auto;
+  /* min-width: 250px; */
+  width: 50%;
+}
+.play-card p:hover{
+  color: #FFF;
 }
 img{
   width: 70%;
   margin: 0 auto;
+}
+
+@media (max-width: 885px){
+  .play-card{
+    width: 80%;
+  }
 }

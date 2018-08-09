@@ -114,7 +114,7 @@ export class MyPlantsComponent implements OnInit {
       };
       this.uploader.uploadAll();
       this.uploader.onCompleteItem = () => {
-        this.router.navigate(['/profile'], plant._id);
+        this.refreshPlants();
       };
     }
   }

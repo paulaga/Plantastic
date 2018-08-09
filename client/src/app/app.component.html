@@ -18,5 +18,8 @@
           </ul>
         </div>
       </nav>
+      <div *ngIf="!sessionService.user" class="app">
+        <h1>La app para cuidar tu jardín</h1>
+      </div>
 
 <router-outlet></router-outlet>
