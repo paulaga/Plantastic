@@ -11,9 +11,9 @@
   border-radius: 6px;
   background: #FFF;
   /* border: 1px solid #ccc; */
-  -webkit-box-shadow: 5px 5px 34px -7px rgba(40,55,71,1);
-  -moz-box-shadow: 5px 5px 34px -7px rgba(40,55,71,1);
-  box-shadow: 5px 5px 34px -7px rgba(40,55,71,1);
+  -webkit-box-shadow: 5px 5px 34px -15px rgba(40,55,71,1);
+  -moz-box-shadow: 5px 5px 34px -15px rgba(40,55,71,1);
+  box-shadow: 5px 5px 34px -15px rgba(40,55,71,1);
 }
 .img-card-container img{
   width: 100%;

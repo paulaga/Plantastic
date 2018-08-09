@@ -1,20 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <div style="text-align:center">
-  <h1 *ngIf="!sessionService.user" >Welcome to {{ title }}!</h1>
-  <h1 *ngIf="sessionService.user" >Welcome {{ sessionService.user.username }}!</h1>
-</div> -->
-
-<!-- 
-  <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Plantastic</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-      </div>
-    </nav> -->
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" [routerLink]="['/']">Plantast<span class="b-green">!</span>c</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -35,16 +18,5 @@
           </ul>
         </div>
       </nav>
-
-
-<!-- <ul class="navbar-nav">
-  <li><a [routerLink]="['/']">HOME</a></li>
-  <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/signup']">Signup</a></li>
-  <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/login']">Login</a></li>
-  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile']">My plants</a></li>
-  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/wishlist']">My wishlist</a></li>
-  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/playlist']">Playlist</a></li>
-  <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" href="#" (click)="logout()">Logout</a></li>
-</ul> -->
 
 <router-outlet></router-outlet>
