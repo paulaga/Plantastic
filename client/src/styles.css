@@ -28,9 +28,7 @@ nav i, nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 .navbar-toogler{
   padding: 0;
 }
-.nav-item{
-  height: 36px;
-}
+
 .nav-link{
   display: inline-block;
   color: #283747;
@@ -113,4 +111,10 @@ body{
  }
 button{
   cursor: pointer;
+}
+
+@media (max-width:991px){
+  .nav-item{
+    height: 36px;
+  }
 }

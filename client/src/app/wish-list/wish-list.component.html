@@ -1,27 +1,29 @@
 <div class="wish-container">
   <div class="container">
-
-    <div *ngIf="!wish" class="no-wish">
+    <div *ngIf="wish == 0" class="no-wish">
       <h1>Bienvenid@ a tu lista de deseos</h1>
       <h2>Aquí podrás anotar todas tus plantas soñadas y, quién sabe, quizás algún día se planten en tu casa</h2>
-      <h3>Aún no tienes ninguna nueva adquisición en mente?<br>Venga, seguro que algo habrá, una palmera, un limonero...</h3>
+      <!-- <h3>Aún no tienes ninguna nueva adquisición en mente?<br>Venga, seguro que algo habrá, una palmera, un limonero...</h3> -->
     </div>
     <div *ngIf="wish" class="wish-card">
-      <h3>Anota</h3>
+      <h3><i class="zmdi zmdi-mood"></i> Tu lista de deseos</h3>
+      <div *ngIf="wish == 0">
+        <h4>¿Aún no tienes ninguna nueva adquisición en mente?<br>Venga, seguro que algo habrá, una palmera, un limonero...</h4>
+      </div>
       <ul *ngFor="let w of wish">
-        <li>{{w.text}}</li>
+        <li>- {{w.text}}</li>
         <button (click)="deleteWish(w._id)"><i class="far fa-trash-alt"></i></button>
       </ul>
     </div>
     <div class="add-wish-container">
       <input type="text" [(ngModel)]="newWish.text" name="text" placeholder="Tu deseo"/>
       <div class="container-login100-form-btn">
-          <div class="wrap-login100-form-btn">
-            <div class="login100-form-bgbtn"></div>
-            <button type="button" (click)="submitWish()" class="login100-form-btn" data-dismiss="modal"> Añade tu deseo </button>
+        <div class="wrap-login100-form-btn">
+          <div class="login100-form-bgbtn">    
           </div>
+          <button type="button" (click)="submitWish()" class="login100-form-btn" data-dismiss="modal"> Añade tu deseo </button>
         </div>
-      <!-- <button (click)="submitWish()">Añadir</button> -->
+      </div>
     </div>
   </div>
 </div>

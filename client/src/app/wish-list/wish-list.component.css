@@ -1,10 +1,13 @@
 .wish-container{
-  background: url('../../assets/images/abrazo.jpg') no-repeat 50% 50%;
+  background: url('../../assets/images/abrazo.jpg') no-repeat center;
   background-size: cover;
   height: 100vh;
 }
+.container{
+  padding-top: 90px;
+}
 .no-wish{
-  padding: 50px;
+  padding-bottom: 50px;
   margin: 0 auto;
   text-align: center;
   color: #FFF;
@@ -27,12 +30,33 @@
 
 /* WISH cards */
 .wish-card{
-  background: #2ECC71;
+  background: #2ecc71e0;
+  padding: 40px;
+  color: #FFF;
+  border-radius: 40px 0;
+  margin-bottom: 30px;
+}
+.wish-card h3{
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+.zmdi-mood{
+  margin-right: 10px;
+}
+ul{
+  margin-top: 12px;
+}
+li{
+  float: left;
+  margin-right: 10px;
 }
 .fa-trash-alt{
   color: #FFF;
 }
 /* ADD WISH */
+.add-wish-container{
+  margin: 10px 0 40px 0;
+}
 .wrap-login100-form-btn {
   width: 40%;
 }
