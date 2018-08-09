@@ -41,6 +41,7 @@ nav i, nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 }
 .navbar-collapse{
   justify-content: flex-end;
+  z-index: 2;
 }
 button:focus{background: none}
 nav ul{
