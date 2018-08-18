@@ -13,6 +13,7 @@ spotifyApi.clientCredentialsGrant()
 router.get('/', ensureLoggedIn(), (req, res, next) => {
   spotifyApi.getPlaylist('riw9rsp43jaqscy6wc36tx46a', '4Q7sxkXzveON4HQYOkctmQ')
     .then(data => {
+      console.log(data)
       res.status(200).json(data.body)
     })
     .catch(e => next(e))
