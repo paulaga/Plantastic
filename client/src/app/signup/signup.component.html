@@ -1,56 +1,20 @@
-<form class="login100-form validate-form">
-    <h2 class="login100-form-title"> Sign up </h2>
-    <div class="input-field">
-      <input [(ngModel)]="username" name="username" type="text">
-      <label class="focus-input100">Ussername</label>
-    </div>
-    <div class="input-field validate-input" data-validate="Password">
-      <span class="btn-show-pass">
-        <i class="zmdi zmdi-eye"></i>
-      </span>
-      <input [(ngModel)]="password" name="password" type="text">
-      <label class="focus-input100">Contraseña</label>
-    </div>
-    <div class="container-login100-form-btn">
-      <div class="wrap-login100-form-btn">
-        <div class="login100-form-bgbtn"></div>
-        <button (click)="signup(username,password)" class="login100-form-btn">Sign up</button>
-      </div>
-    </div>
-  </form>
-
-
-<!-- <form class="login100-form validate-form">
+<form class="login100-form validate-form home-form">
   <h2 class="login100-form-title"> Sign up </h2>
-  <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-    <input class="input100" type="text" [(ngModel)]="username" name="username"/>
-    <span class="focus-input100" data-placeholder="Username"></span>
+  <div class="input-field">
+    <input [(ngModel)]="username" name="username" type="text">
+    <label class="focus-input100">Ussername</label>
   </div>
-  <div class="wrap-input100 validate-input" data-validate="Password">
+  <div class="input-field validate-input" data-validate="Password">
     <span class="btn-show-pass">
       <i class="zmdi zmdi-eye"></i>
     </span>
-    <input class="input100" type="password" [(ngModel)]="password" name="password">
-    <span class="focus-input100" data-placeholder="Password"></span>
+    <input [(ngModel)]="password" name="password" type="text">
+    <label class="focus-input100">Contraseña</label>
   </div>
   <div class="container-login100-form-btn">
-      <div class="wrap-login100-form-btn">
-        <div class="login100-form-bgbtn"></div>
-        <button (click)="signup(username,password)" class="login100-form-btn">Signup</button>
-      </div>
+    <div class="wrap-login100-form-btn">
+      <div class="login100-form-bgbtn"></div>
+      <button (click)="signup(username,password)" class="login100-form-btn">Sign up</button>
     </div>
-  </form>
- -->
-
-
-<!-- <form>
-    <h2> Signup </h2>
-    <label> Username </label>
-    <input type="text" [(ngModel)]="username" name="username"/>
-    <br>
-    <label> Password </label>
-    <input type="password" [(ngModel)]="password" name="password"/>
-
-    <button (click)="signup(username, password)"> SIGNUP </button>
-  </form>
-  <p class="error"> {{ error }} </p> -->
+  </div>
+</form>

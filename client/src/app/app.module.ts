@@ -21,8 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { notifService } from '../services/notif.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
-import { PlaylistComponent } from './playlist/playlist.component'
+import { PlaylistComponent } from './playlist/playlist.component';
 import { playListService } from '../services/play.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { playListService } from '../services/play.service';
     TipsComponent,
     WishListComponent,
     PlaylistComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

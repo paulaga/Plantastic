@@ -1,6 +1,9 @@
 <div class="playlist-cont">
   <div class="container">
       <h2>Música para regar</h2>
+      <div *ngIf="!playList">
+        <p>La playlist no está disponible en estos momentos</p>
+      </div>
     <div *ngIf="playList" class="music-container">
       <div class="play-card" *ngFor="let play of playList.tracks.items">
         <div class="song-card">
