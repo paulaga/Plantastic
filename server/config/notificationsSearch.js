@@ -12,12 +12,10 @@ function lookForNotifications() {
       plants.forEach(plant => {
         plant.nextWater = moment(plant.lastWater)
         .add(plant.waterTimes, "days").format("LL");
-        if(
-          (plant.nextWater = moment(plant.lastWater)
-          .add(plant.waterTimes, "days")
-          .format("LL")) == moment().format("LL")
+        if( 
+          (plant.nextWater = moment(plant.nextWater).format("LL")) == moment().format("LL")
         ){
-          Notif.find({ author: user._id }).then(notifs => {
+          Notif.find({ plantId: plant._id }).then(notifs => {
             if(notifs.length == 0) 
             {
               Notif.create({
@@ -25,18 +23,6 @@ function lookForNotifications() {
                 nextWater: plant.nextWater,
                 plantId: plant._id,
                 author: user._id
-              });
-            } else {
-              notifs.forEach(notif => {
-                if(notif.message != `Hoy tienes que regar a ${plant.name}`) 
-                {
-                  Notif.create({
-                    message: `Hoy tienes que regar a ${plant.name}`,
-                    nextWater: plant.nextWater,
-                    plantId: plant._id,
-                    author: user._id
-                  });
-                }
               });
             }
           });
@@ -48,8 +34,5 @@ function lookForNotifications() {
     .catch(e => next(e));
 }
 
-//sendNotif(){
-//  console.log(`Hoy tienes que regar a ${plant.name}`)
-//}
 
 module.exports = lookForNotifications;
