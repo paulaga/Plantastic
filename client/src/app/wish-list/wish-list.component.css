@@ -69,3 +69,32 @@ input{
   text-align: center;
   font-size: 1.3em;
 }
+
+@media (max-width: 768px){
+  .container {
+    max-width: 90%;
+  }
+}
+@media (max-width: 698px){
+  .container {
+    padding-top: 60px;
+  }
+  .no-wish h1 {
+    font-size: 2em;
+  }
+  .no-wish h2{
+    font-size: 1.3em;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .wish-card h4{
+    font-size: 1.1em;
+  }
+  .add-wish-container{
+    width: 80%;
+    margin: 20px auto 0 auto;
+  }
+  .wrap-login100-form-btn{
+    width: 75%;
+  }
+}
