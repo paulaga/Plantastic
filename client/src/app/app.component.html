@@ -1,41 +1,25 @@
-<nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" [routerLink]="['/']">Plantast<span class="b-green">!</span>c</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">
-      <i class="zmdi zmdi-menu"></i>
-    </span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <!-- <li class="nav-item"><a class="nav-link active" [routerLink]="['/']">HOME</a></li> -->
-      <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/signup']">Signup</a></li>
-      <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/login']">Login</a></li>
-      <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile']">My plants</a></li>
-      <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/wishlist']">My wishlist</a></li>
-      <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/playlist']">Playlist</a></li>
-      <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" href="#" (click)="logout()">Logout</a></li>
-    </ul>
-  </div>
-</nav>
-<!-- <div *ngIf="!sessionService.user" class="app">
-  <h1>La app para cuidar tu jardín</h1>
-</div>
-<i class="zmdi zmdi-chevron-down"></i>
-<div class="what-is">
-  <div class="container what-container">
-    <div class="what-info">
-      <img src="../assets/images/notification.png" alt="Notificaciones">
-      <p>Recibe notificaciones cuando te toque regar alguna de tus plantas</p>
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" [routerLink]="['/']">Plantast<span class="b-green">!</span>c</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <i class="zmdi zmdi-menu"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- <li class="nav-item"><a class="nav-link active" [routerLink]="['/']">HOME</a></li> -->
+        <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/signup']">Signup</a></li>
+        <li class="nav-item" *ngIf="!sessionService.user"><a class="nav-link" [routerLink]="['/login']">Login</a></li>
+        <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile']">My plants</a></li>
+        <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/wishlist']">My wishlist</a></li>
+        <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" [routerLink]="['/profile/playlist']">Playlist</a></li>
+        <li class="nav-item" *ngIf="sessionService.user"><a class="nav-link" href="#" (click)="logout()">Logout</a></li>
+      </ul>
     </div>
-    <div class="what-info">
-      <img src="../assets/images/garden.png" alt="música para regar">
-      <p>Consigue acceso gratuito a la playlist "Música para regar"</p>
-    </div>
-    <div class="what-info">
-      <img src="../assets/images/list.png" alt="lista de deseos">
-      <p>Anota en tu wishlist las plantas que quieras adquirir</p>
-    </div>
-  </div>
-</div> -->
-<router-outlet></router-outlet>
+  </nav>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

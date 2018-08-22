@@ -19,10 +19,8 @@
       </div>
       <div class="info-card-container">
         <h4>{{plant.name}}</h4>
-        <p>
-          <i class="fas fa-tint"></i> Cada {{plant.waterTimes}} días</p>
-        <a [routerLink]="['plants',plant._id]">
-          <i class="zmdi zmdi-flower-alt"></i> ver planta</a>
+        <p><i class="fas fa-tint"></i> Cada {{plant.waterTimes}} días</p>
+        <p class="see-plant"><a [routerLink]="['plants',plant._id]"><i class="zmdi zmdi-flower-alt"></i> + INFO</a></p>
       </div>
     </div>
     <div class="plant-card new-plant">
@@ -40,8 +38,6 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <form class="validate-form">
-        <!-- <form class="login100-form validate-form"> -->
-        <!-- <h2 class="login100-form-title"> Login </h2> -->
         <div class="input-field">
           <input type="text" [(ngModel)]="newPlant.name" name="name" />
           <label class="focus-input100">Nombre</label>

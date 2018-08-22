@@ -31,9 +31,25 @@
 
 .fa-tint{
   margin: 10px 5px 0 0;
-  color: #2ECC71;
+  color: #3fb8cc;
 }
 
+.see-plant{ 
+  display: flex;
+  align-items: center;
+}
+.see-plant i{
+  margin: 9px 5px 0 0;
+  font-size: 1.2em;
+  color: #2ecc71;
+}
+.see-plant a{
+  font-weight: 600;
+  color: #9e9e9e;
+}
+.see-plant a:hover{ 
+  color: #2ecc71;
+}
 /* Add new plant card */
 .new-plant{
   opacity: .8;

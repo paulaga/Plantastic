@@ -1,4 +1,6 @@
 .app{
+  width: 80%;
+  margin: 0 auto;
   padding: 5px;
   margin-top: 25vh;
   text-align: center;
@@ -26,6 +28,7 @@
   font-size: 66px;
   right: 50%;
   margin-right: -16px;
+  text-shadow: 2px 0px 8px rgba(0,0,0,0.14);
   animation-name: arrow;
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
@@ -54,7 +57,17 @@
 }
 .what-container{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+}
+.what-claim{
+  width: 60%;
+  margin: 0 auto 50px auto;
+}
+.what-claim h3{
+  font-weight: 300;
+  color: #9e9e9e;
+  letter-spacing: .02em;
 }
 .what-info{
   text-align: center;
@@ -66,4 +79,19 @@
   width: 90px;
   opacity: .7;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px){
+  .what-claim{
+    width: 80%;
+  }
+  .what-info{
+    width: 60%;
+    margin: 20px auto 30px auto;
+  }
+}
+@media (max-width: 450px){
+  .app h1{
+    font-size: 2.5em;
+  }
 }
