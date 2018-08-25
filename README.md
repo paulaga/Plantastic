@@ -1,3 +1,7 @@
+----------
+Plantastic
+----------
+
 Plantastic is a friendly plant care app where you can:
 
 - Register and add your plants info
@@ -7,7 +11,6 @@ Plantastic is a friendly plant care app where you can:
 
 ----
 Take a look at --> https://plantastic-app.herokuapp.com/home
-----
 
 
 * I'm currently working on it, so it might suffer changes :-)
