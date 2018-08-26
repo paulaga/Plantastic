@@ -12,7 +12,7 @@ Plantastic is a friendly plant care app where you can:
 
 
 
-**Take a look at** --> https://plantastic-app.herokuapp.com/home
+**Take a look at** --> <a href="https://plantastic-app.herokuapp.com/home" target="_blank">https://plantastic-app.herokuapp.com/home</a>
 
 
 *I'm currently working on it, so it might suffer changes :-)*
