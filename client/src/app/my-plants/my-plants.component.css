@@ -95,6 +95,7 @@
   position: static;
   display: -ms-flexbox;
   pointer-events: auto;
+  border: 0;
 }
 .input-field {
   margin-top: 27px;
